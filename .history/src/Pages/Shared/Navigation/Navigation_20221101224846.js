@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const Navigation = () => {
     return (
         <div>
-            <Box sx={{ flexGrow: 1, pb:2 }}>
+            <Box sx={{ flexGrow: 1, pb:1 }}>
                 <AppBar position="static">
                     <Toolbar>
                         <IconButton

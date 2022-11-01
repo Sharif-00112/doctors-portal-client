@@ -40,7 +40,7 @@ const Banner = () => {
             </Container>
 
             <Container sx={{ flexGrow: 1 }}>
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 3, sm: 3, md: 3 }}>
+                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid xs={4}>
                         <Grid sx={{ p:1, my:1, mx:2 }} container spacing={1} style={{ backgroundColor: '#5CE7ED'}}>
                             <Grid xs={4}>
@@ -57,13 +57,13 @@ const Banner = () => {
                         </Grid>
                     </Grid>
                     <Grid xs={4}>
-                        <Grid sx={{ p:1, my:1, mx:2 }} container spacing={1} style={{ backgroundColor: 'gray'}}>
+                        <Grid sx={{ p:1, my:1, mx:2 }} container spacing={1} style={{ backgroundColor: '#5CE7ED'}}>
                             <Grid xs={4}>
                                 Icon
                             </Grid>
                             <Grid xs={8}>
                                 <Typography sx={{ fontSize: 20, fontWeight: 600  }} style={{color: 'white'}} variant="h5" component="div">
-                                    Visit our location
+                                    Opening Hours
                                 </Typography>
                                 <Typography sx={{ fontSize: 14, fontWeight: 400 }} style={{color: 'white'}} variant="h6" component="div">
                                     Lorem ipsum dolor sit amet consectetur adipisicing.
@@ -78,6 +78,36 @@ const Banner = () => {
                             </Grid>
                             <Grid xs={8}>
                                 <Typography sx={{ fontSize: 20, fontWeight: 600  }} style={{color: 'white'}} variant="h5" component="div">
+                                    Opening Hours
+                                </Typography>
+                                <Typography sx={{ fontSize: 14, fontWeight: 400 }} style={{color: 'white'}} variant="h6" component="div">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid xs={4}>
+                        <Grid container spacing={1} style={{ backgroundColor: 'gray'}}>
+                            <Grid xs={4}>
+                                Icon
+                            </Grid>
+                            <Grid xs={8}>
+                                <Typography sx={{ }} style={{color: 'white'}} variant="h5" component="div">
+                                    Visit our location
+                                </Typography>
+                                <Typography sx={{ fontSize: 14, fontWeight: 400 }} style={{color: 'white'}} variant="h6" component="div">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid xs={4}>
+                        <Grid container spacing={1} style={{ backgroundColor: '#5CE7ED'}}>
+                            <Grid xs={4}>
+                                Icon
+                            </Grid>
+                            <Grid xs={8}>
+                                <Typography sx={{ }} style={{color: 'white'}} variant="h5" component="div">
                                     Contact us now
                                 </Typography>
                                 <Typography sx={{ fontSize: 14, fontWeight: 400 }} style={{color: 'white'}} variant="h6" component="div">
