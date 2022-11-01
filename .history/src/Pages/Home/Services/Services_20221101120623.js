@@ -1,7 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
-import Typography from '@mui/material/Typography';
 import { Container } from '@mui/material';
 import Service from '../Service/Service';
 
@@ -30,15 +29,11 @@ const services = [
 const Services = () => {
     return (
         <div>
+            <h2>Our Services</h2>
+            <h2>Services We Provide</h2>
+
             <Box sx={{ flexGrow: 1 }}>
                 <Container>
-                    <Typography sx={{ mb: 2, mt: 4, fontWeight: 500, color: 'success.main' }} variant="h6" component="div">
-                        Our Services
-                    </Typography>
-                    <Typography sx={{ mb: 3, fontWeight: 500 }} variant="h4" component="div">
-                        Services We Provide
-                    </Typography>
-
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         {
                             services.map(service => (
