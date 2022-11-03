@@ -41,27 +41,23 @@ const Contact = () => {
                 <Container>
                     <form onSubmit={handleContactSubmit}>
                         <TextField
-                            style={{backgroundColor: 'white'}}
                             required
-                            sx={{width: "80%", m:1 }}
+                            sx={{width: "90%", m:1 }}
                             id="outlined-size-small"
                             placeholder='Your Email*'
                             // defaultValue='Your Email'
                             size="small"
                             />
                         <TextField
-                            style={{backgroundColor: 'white'}}
                             required
-                            sx={{width: "80%", m:1 }}
+                            sx={{width: "90%", m:1 }}
                             id="outlined-size-small"
                             placeholder='Subject*'
                             // defaultValue='Subject'
                             size="small"
                             />
                         <TextField
-                            style={{backgroundColor: 'white'}}
                             required
-                            sx={{width: "80%", m:1 }}
                             id="filled-multiline-static"
                             // label="Multiline"
                             multiline
@@ -70,8 +66,7 @@ const Contact = () => {
                             // defaultValue="Your message"
                             variant="filled"
                             />
-                            <br />
-                        <Button type='submit' sx={{mt:3}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>
+                        <Button type='submit' sx={{m:1}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>
                     </form>
                 </Container>
 

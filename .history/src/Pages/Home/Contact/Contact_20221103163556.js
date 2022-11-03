@@ -41,7 +41,6 @@ const Contact = () => {
                 <Container>
                     <form onSubmit={handleContactSubmit}>
                         <TextField
-                            style={{backgroundColor: 'white'}}
                             required
                             sx={{width: "80%", m:1 }}
                             id="outlined-size-small"
@@ -50,7 +49,6 @@ const Contact = () => {
                             size="small"
                             />
                         <TextField
-                            style={{backgroundColor: 'white'}}
                             required
                             sx={{width: "80%", m:1 }}
                             id="outlined-size-small"
@@ -59,7 +57,6 @@ const Contact = () => {
                             size="small"
                             />
                         <TextField
-                            style={{backgroundColor: 'white'}}
                             required
                             sx={{width: "80%", m:1 }}
                             id="filled-multiline-static"
@@ -71,7 +68,7 @@ const Contact = () => {
                             variant="filled"
                             />
                             <br />
-                        <Button type='submit' sx={{mt:3}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>
+                        <Button type='submit' sx={{m:2}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>
                     </form>
                 </Container>
 
