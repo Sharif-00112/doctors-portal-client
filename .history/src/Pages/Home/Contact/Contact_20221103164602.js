@@ -1,4 +1,3 @@
-import { Container } from '@mui/system';
 import React from 'react';
 import bg from '../../../images/images/appointment-bg.png'
 import Typography from '@mui/material/Typography';
