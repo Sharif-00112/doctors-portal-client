@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
 const Navigation = () => {
     return (
         <div>
-            <Box sx={{ flexGrow: 1, pb:2 }}>
-                <AppBar position="static">
+            <Box sx={{ flexGrow: 1, pb:2, mb:5 }}>
+                <AppBar position="fixed">
                     <Toolbar>
                         <IconButton
                             size="large"

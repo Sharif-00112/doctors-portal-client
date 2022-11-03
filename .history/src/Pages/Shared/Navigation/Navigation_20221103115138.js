@@ -12,7 +12,7 @@ const Navigation = () => {
     return (
         <div>
             <Box sx={{ flexGrow: 1, pb:2 }}>
-                <AppBar position="static">
+                <AppBar position="fixed">
                     <Toolbar>
                         <IconButton
                             size="large"

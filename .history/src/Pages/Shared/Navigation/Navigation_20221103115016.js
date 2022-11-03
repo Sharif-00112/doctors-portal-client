@@ -24,7 +24,7 @@ const Navigation = () => {
                             <MenuIcon />
                         </IconButton>
                         <Link to = '/home'>
-                            <Button color="inherit">Home</Button>
+                            <Button color="white">Home</Button>
                         </Link>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             Doctors Portal

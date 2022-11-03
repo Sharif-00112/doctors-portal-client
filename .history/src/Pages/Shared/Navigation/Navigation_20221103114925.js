@@ -17,7 +17,7 @@ const Navigation = () => {
                         <IconButton
                             size="large"
                             edge="start"
-                            color="inherit"
+                            color="#5CE7ED"
                             aria-label="menu"
                             sx={{ mr: 2 }}
                         >

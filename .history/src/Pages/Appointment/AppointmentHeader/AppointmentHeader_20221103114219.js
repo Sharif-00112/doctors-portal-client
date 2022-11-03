@@ -11,7 +11,8 @@ const AppointmentHeader = ({ date, setDate }) => {
 
     return (
         <div>
-            <Typography sx={{ mt:4, mb:7, fontSize: 30, fontWeight: 600, color: '#5CE7ED'}} variant='h4' gutterBottom component='div'>
+            <h2>Book an Appointment Now!</h2>
+            <Typography sx={{ mt: 5, mb:3, fontSize: 25, fontWeight: 600, color: '#5CE7ED'}} variant='h4' gutterBottom component='div'>
                 Book an Appointment Now!
             </Typography>
             <Container>

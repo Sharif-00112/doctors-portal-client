@@ -23,12 +23,12 @@ const Navigation = () => {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Link to = '/home'>
-                            <Button color="inherit">Home</Button>
-                        </Link>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             Doctors Portal
                         </Typography>
+                        <Link to = '/home'>
+                            <Button color="inherit">Home</Button>
+                        </Link>
                         <Link to = '/appointment'>
                             <Button color="inherit">Appointment</Button>
                         </Link>

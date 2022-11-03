@@ -46,7 +46,7 @@ const bookings = [
 
 const AvailableAppointments = ({ date }) => {
     return (
-        <Container sx={{mb:5}}>
+        <Container>
             {/* {console.log(typeof(date), date)} */}
             <Typography sx={{ mt: 5, mb:3, fontSize: 25, fontWeight: 600, color: '#5CE7ED'}} variant='h4' gutterBottom component='div'>
                 Available Appointments on: {date.toDateString()}

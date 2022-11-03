@@ -23,18 +23,9 @@ const style = {
 const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
     const { id, name, time, space } = booking
 
-    const handleBookingSubmit = e =>{
-        e.preventDefault();
-
-        //collect form data 
-
-
-        //send data to the server and database
-
-
-        alert('Appointment Submitted');
-        handleBookingClose()
-    }
+    // const [openBooking, setOpenBooking] = React.useState(false);
+    // const handleBookingOpen = () => setOpenBooking(true);
+    // const handleBookingClose = () => setOpenBooking(false);
 
     return (
         <div>
@@ -51,10 +42,10 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
             >
                 <Fade in={openBooking}>
                     <Box sx={style}>
-                            <Typography sx={{ mb:3, fontSize: 20, fontWeight: 600, color: '#5CE7ED'}} variant='h6' gutterBottom component='div'>
-                                {name}
-                            </Typography>
-                        <form onSubmit={handleBookingSubmit}>
+                        <Typography id="transition-modal-title" variant="h6" component="h2">
+                            {name}
+                        </Typography>
+                        <form>
                         <TextField
                             disabled
                             sx={{width: "90%", m:1 }}
@@ -87,8 +78,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             defaultValue='Phone Number'
                             size="small"
                             />
-                        <Button type='submit' sx={{m:1}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>
-                        <Button onClick={handleBookingClose} sx={{m:1}} variant="contained" style={{backgroundColor: 'gray'}}>Cancel</Button>
+                        <Button sx={{m:2}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>
                         </form>
                     </Box>
                 </Fade>
