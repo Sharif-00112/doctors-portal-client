@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { Box, Button, Container } from '@mui/material';
-
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 import chair from '../../../images/images/chair.png';
 import bnBg from '../../../images/images/bg.png';
@@ -43,7 +43,7 @@ const Banner = () => {
             <Container sx={{ flexGrow: 1 }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 3, sm: 3, md: 3 }}>
                     <Grid xs={4}>
-                        <Grid sx={{ p:1, my:1, mx:2 }} container spacing={1} style={{ backgroundColor: '#5CE7ED'}}>
+                        <Grid sx={{ p:1, my:1, m:2 me:7}} container spacing={1} style={{ backgroundColor: '#5CE7ED'}}>
                             <Grid xs={4}>
                                 Icon
                             </Grid>

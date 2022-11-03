@@ -21,7 +21,7 @@ const style = {
 };
 
 const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
-    const { name, time } = booking
+    const { id, name, time, space } = booking
 
     const handleBookingSubmit = e =>{
         e.preventDefault();
