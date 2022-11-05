@@ -5,11 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
-// import { Icon } from '@mui/material';
-// import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faShoppingCart  } from '@fortawesome/free-solid-svg-icons';
+
 
 const appointmentBanner = {
     background: `url(${bg})`,
@@ -20,7 +16,8 @@ const appointmentBanner = {
 const Footer = () => {
     return (
         <div style={appointmentBanner}>
-            <Container sx={{ py: 5 }}>
+            <h4>Footer area</h4>
+            <Container>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2}>
                         <Grid item style={{ textAlign: 'left'}} xs={6} md={3}>
@@ -115,45 +112,15 @@ const Footer = () => {
                             <Typography sx={{ my:2, fontSize: 18, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h6" component="div">
                                 Our Address
                             </Typography>
-                            <Typography sx={{ fontSize: 16, fontWeight: 400 }} variant="" component="div">
+                                <Typography sx={{ fontSize: 16, fontWeight: 400 }} variant="" component="div">
                                     Bashundhara Baridhara <br />
                                     Dhaka-1000 
                             </Typography>
-
-                            {/* <Button>
-                                <FontAwesomeIcon icon={faShoppingCart} /> Cart
-                                <FontAwesomeIcon icon="fa-brands fa-facebook" />
-                            </Button> */}
-
-                            <a href="https://www.facebook.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    FB
-                                </Button>
-                            </a>
-                            <a href="https://www.google.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    G+
-                                </Button>
-                            </a>
-                            <a href="https://twitter.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    TW
-                                </Button>
-                            </a>
-
-                            <Typography sx={{ mt:7, fontSize: 16, fontWeight: 400 }} variant="" component="div">
-                                    Call Now
-                            </Typography>
-                            <a href="tel:+8801773241632">
-                                <Button sx={{ mt:1, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    +8801773241632
-                                </Button>
-                            </a>
                         </Grid>
                     </Grid>
                 </Box>
             </Container>
-            <Typography sx={{ my:1, mt:7, fontSize: 14, fontWeight: 400 }} variant="" component="div">
+            <Typography sx={{ my:2, mt:7, fontSize: 14, fontWeight: 400 }} variant="" component="div">
                 Copyright 2022 All Rights Reserved 
             </Typography>
         </div>

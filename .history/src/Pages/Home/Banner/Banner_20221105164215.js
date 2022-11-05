@@ -32,7 +32,7 @@ const Banner = () => {
                             <Typography sx={{ my: 3, pr: 15, fontSize: 14, fontWeight: 400, color: 'gray'}} variant="h6" component="div">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita iusto earum laudantium beatae eos repellendus iste debitis esse nemo sed.
                             </Typography>
-                            {/* <Button variant="contained" style={{backgroundColor: '#5CE7ED'}}>Get Appointment</Button>  */}
+                            <Button variant="contained" style={{backgroundColor: '#5CE7ED'}}>Get Appointment</Button> 
                             <Link to = '/appointment'>
                                 <Button variant="contained" style={{backgroundColor: '#5CE7ED'}}>Get Appointment</Button> 
                             </Link>

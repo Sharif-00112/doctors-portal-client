@@ -124,22 +124,20 @@ const Footer = () => {
                                 <FontAwesomeIcon icon={faShoppingCart} /> Cart
                                 <FontAwesomeIcon icon="fa-brands fa-facebook" />
                             </Button> */}
-
-                            <a href="https://www.facebook.com/" target="_blank">
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://www.facebook.com/" target="_blank">FB</a>
+                            </Button>
+                            <a href="https://www.facebook.com/">
                                 <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     FB
                                 </Button>
                             </a>
-                            <a href="https://www.google.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    G+
-                                </Button>
-                            </a>
-                            <a href="https://twitter.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    TW
-                                </Button>
-                            </a>
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://www.google.com/" target="_blank">G+</a>
+                            </Button>
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://twitter.com/" target="_blank">TW</a>
+                            </Button>
 
                             <Typography sx={{ mt:7, fontSize: 16, fontWeight: 400 }} variant="" component="div">
                                     Call Now

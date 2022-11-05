@@ -119,36 +119,23 @@ const Footer = () => {
                                     Bashundhara Baridhara <br />
                                     Dhaka-1000 
                             </Typography>
-
                             {/* <Button>
                                 <FontAwesomeIcon icon={faShoppingCart} /> Cart
                                 <FontAwesomeIcon icon="fa-brands fa-facebook" />
                             </Button> */}
-
-                            <a href="https://www.facebook.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    FB
-                                </Button>
-                            </a>
-                            <a href="https://www.google.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    G+
-                                </Button>
-                            </a>
-                            <a href="https://twitter.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    TW
-                                </Button>
-                            </a>
+                            <Button>
+                                <a href="https://www.facebook.com/" target="_blank">FB</a>
+                            </Button>
+                            <Button>
+                                <a href="https://www.google.com/" target="_blank">G+</a>
+                            </Button>
+                            <Button>
+                                <a href="https://twitter.com/" target="_blank">TW</a>
+                            </Button>
 
                             <Typography sx={{ mt:7, fontSize: 16, fontWeight: 400 }} variant="" component="div">
                                     Call Now
                             </Typography>
-                            <a href="tel:+8801773241632">
-                                <Button sx={{ mt:1, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    +8801773241632
-                                </Button>
-                            </a>
                         </Grid>
                     </Grid>
                 </Box>

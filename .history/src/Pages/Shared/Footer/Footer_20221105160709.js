@@ -140,6 +140,12 @@ const Footer = () => {
                                     TW
                                 </Button>
                             </a>
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://www.google.com/" target="_blank">G+</a>
+                            </Button>
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://twitter.com/" target="_blank">TW</a>
+                            </Button>
 
                             <Typography sx={{ mt:7, fontSize: 16, fontWeight: 400 }} variant="" component="div">
                                     Call Now

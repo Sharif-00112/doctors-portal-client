@@ -124,31 +124,25 @@ const Footer = () => {
                                 <FontAwesomeIcon icon={faShoppingCart} /> Cart
                                 <FontAwesomeIcon icon="fa-brands fa-facebook" />
                             </Button> */}
-
-                            <a href="https://www.facebook.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    FB
-                                </Button>
-                            </a>
-                            <a href="https://www.google.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    G+
-                                </Button>
-                            </a>
-                            <a href="https://twitter.com/" target="_blank">
-                                <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    TW
-                                </Button>
-                            </a>
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://www.facebook.com/" target="_blank">FB</a>
+                            </Button>
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://www.google.com/" target="_blank">G+</a>
+                            </Button>
+                            <Button type='submit' sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="https://twitter.com/" target="_blank">TW</a>
+                            </Button>
 
                             <Typography sx={{ mt:7, fontSize: 16, fontWeight: 400 }} variant="" component="div">
                                     Call Now
                             </Typography>
-                            <a href="tel:+8801773241632">
-                                <Button sx={{ mt:1, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    +8801773241632
-                                </Button>
-                            </a>
+                            <Button sx={{ mt:1, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="tel:+8801773241632">+8801773241632</a>
+                            </Button>
+                            <Button sx={{ mt:1, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                                <a href="tel:+8801773241632">+8801773241632</a>
+                            </Button>
                         </Grid>
                     </Grid>
                 </Box>
