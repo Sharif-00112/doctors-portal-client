@@ -28,17 +28,16 @@ const Login = () => {
     return (
         <div className="">
             <Navigation></Navigation>
-            <Container sx={{ my:5 }}>
+            <Container sx={{ my:8 }}>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2}>
                         <Grid sx={{ mt:5 }} xs={12} md={6}>
                             <Typography sx={{ my:2, fontSize: 25, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h4" component="div">
-                                Login
+                                Please Login Here
                             </Typography>
                             <form onSubmit={ handleLoginSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
-                                    required
                                     id="standard-basic"
                                     name='email' 
                                     onChange={handleOnChange}
@@ -47,7 +46,6 @@ const Login = () => {
                                 <br />
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
-                                    required
                                     id="standard-basic" 
                                     name='password'
                                     onChange={handleOnChange}
@@ -55,17 +53,11 @@ const Login = () => {
                                     type="password"
                                     variant="standard" />
                                 <br />
-                                <Button type='submit' sx={{ width:'50%',m:3 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    Login
-                                </Button>
-                                <br />
-                                <NavLink 
-                                    style={{ textDecoration:'none'}} 
-                                    to='/register'>
-                                    <Button sx={{ color: 'black' }}>
-                                        New user? Please Register here
-                                    </Button>
+                                <NavLink to = '/register'>
+                                    <Button color="inherit">New user? Register here</Button>
                                 </NavLink>
+                                <br />
+                                <Button type='submit' sx={{ width:'50%',m:3 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Login</Button>
                             </form>
 
                         </Grid>

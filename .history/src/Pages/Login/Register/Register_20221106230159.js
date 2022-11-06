@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Button, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import registerImg from '../../../images/images/login.png'
+import loginImg from '../../../images/images/login.png'
 import TextField from '@mui/material/TextField';
 import Navigation from '../../Shared/Navigation/Navigation';
 import { NavLink } from 'react-router-dom';
@@ -16,12 +16,12 @@ const Register = () => {
         const field = e.target.name;
         const value = e.target.value;
         // console.log(field, value);
-        const newRegisterData = { ...registerData };
-        newRegisterData[field] = value;
-        setRegisterData(newRegisterData);
+        const newLoginData = { ...registerData };
+        newLoginData[field] = value;
+        setRegisterData(newLoginData);
     }
 
-    const handleRegisterSubmit = e => {
+    const handleLoginSubmit = e => {
         e.preventDefault();
         if(registerData.password !== registerData.password2){
             alert('Password did not matched!');
@@ -40,7 +40,7 @@ const Register = () => {
                             <Typography sx={{ my:2, fontSize: 25, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h4" component="div">
                                 Register
                             </Typography>
-                            <form onSubmit={ handleRegisterSubmit }>
+                            <form onSubmit={ handleLoginSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
                                     required
@@ -86,7 +86,7 @@ const Register = () => {
 
                         </Grid>
                         <Grid xs={12} md={6}>
-                            <img style={{ width:'80%' }} src={registerImg} alt="" />
+                            <img style={{ width:'80%' }} src={loginImg} alt="" />
                         </Grid>
                     </Grid>
                 </Box>

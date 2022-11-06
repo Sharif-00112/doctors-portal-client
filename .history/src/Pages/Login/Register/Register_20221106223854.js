@@ -3,33 +3,29 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Button, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import registerImg from '../../../images/images/login.png'
+import loginImg from '../../../images/images/login.png'
 import TextField from '@mui/material/TextField';
 import Navigation from '../../Shared/Navigation/Navigation';
 import { NavLink } from 'react-router-dom';
 
 
 const Register = () => {
-    const [registerData, setRegisterData] = useState({});
+    const [loginData, setLoginData] = useState({})
 
     const handleOnChange = e =>{
         const field = e.target.name;
         const value = e.target.value;
         // console.log(field, value);
-        const newRegisterData = { ...registerData };
-        newRegisterData[field] = value;
-        setRegisterData(newRegisterData);
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
     }
 
-    const handleRegisterSubmit = e => {
+    const handleLoginSubmit = e => {
         e.preventDefault();
-        if(registerData.password !== registerData.password2){
-            alert('Password did not matched!');
-            return;
-        }
-        alert('Register Clicked!');
+        alert('Login Clicked!');
     }
-
+    
     return (
         <div>
             <Navigation></Navigation>
@@ -38,55 +34,42 @@ const Register = () => {
                     <Grid container spacing={2}>
                         <Grid sx={{ mt:5 }} xs={12} md={6}>
                             <Typography sx={{ my:2, fontSize: 25, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h4" component="div">
-                                Register
+                                Please Login Here
                             </Typography>
-                            <form onSubmit={ handleRegisterSubmit }>
+                            <form onSubmit={ handleLoginSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
-                                    required
                                     id="standard-basic"
                                     name='email' 
-                                    type='email'
                                     onChange={handleOnChange}
                                     label="Your Email" 
                                     variant="standard" />
                                 <br />
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
-                                    required
                                     id="standard-basic" 
                                     name='password'
                                     onChange={handleOnChange}
-                                    label="Enter a strong Password" 
-                                    type="password"
-                                    variant="standard" />
-                                <br />
-                                <TextField 
-                                    sx={{ width:'75%', m:1 }}
-                                    required
-                                    id="standard-basic" 
-                                    name='password2'
-                                    onChange={handleOnChange}
-                                    label="Confirm Password" 
+                                    label="Your Password" 
                                     type="password"
                                     variant="standard" />
                                 <br />
                                 <Button type='submit' sx={{ width:'50%',m:3 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
-                                    Register
+                                    Login
                                 </Button>
                                 <br />
                                 <NavLink 
                                     style={{ textDecoration:'none'}} 
-                                    to='/login'>
+                                    to='/register'>
                                     <Button sx={{ color: 'black' }}>
-                                        Already Registered? Please Login here
+                                        New user? Please Register here
                                     </Button>
                                 </NavLink>
                             </form>
 
                         </Grid>
                         <Grid xs={12} md={6}>
-                            <img style={{ width:'80%' }} src={registerImg} alt="" />
+                            <img style={{ width:'80%' }} src={loginImg} alt="" />
                         </Grid>
                     </Grid>
                 </Box>
