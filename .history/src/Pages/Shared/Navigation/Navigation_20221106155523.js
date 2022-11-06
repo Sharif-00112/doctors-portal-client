@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
     return (
@@ -32,9 +32,9 @@ const Navigation = () => {
                         <Link to = '/appointment'>
                             <Button color="inherit">Appointment</Button>
                         </Link>
-                        <NavLink to = '/login'>
+                        <Link to = '/login'>
                             <Button color="inherit">Login</Button>
-                        </NavLink>
+                        </Link>
                         {/* <Button color="inherit">Login</Button> */}
                     </Toolbar>
                 </AppBar>
