@@ -34,7 +34,7 @@ const Banner = () => {
                             </Typography>
                             {/* <Button variant="contained" style={{backgroundColor: '#5CE7ED'}}>Get Appointment</Button>  */}
                             <Link 
-                                style={{ textDecoration:'none' }}
+                                style={{ textDecoration:'none', color:'white' }}
                                 to = '/appointment'>
                                 <Button variant="contained" style={{backgroundColor: '#5CE7ED'}}>Get Appointment</Button> 
                             </Link>

@@ -24,21 +24,17 @@ const Navigation = () => {
                             <MenuIcon />
                         </IconButton>
                         <Link 
-                            style={{ textDecoration:'none', color:'white' }}
+                            style={{ textDecoration:'none'}}
                             to = '/home'>
                             <Button color="inherit">Home</Button>
                         </Link>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             Doctors Portal
                         </Typography>
-                        <Link 
-                            style={{ textDecoration:'none', color:'white' }}
-                            to = '/appointment'>
+                        <Link to = '/appointment'>
                             <Button color="inherit">Appointment</Button>
                         </Link>
-                        <NavLink 
-                            style={{ textDecoration:'none', color:'white' }}
-                            to = '/login'>
+                        <NavLink to = '/login'>
                             <Button color="inherit">Login</Button>
                         </NavLink>
                         {/* <Button color="inherit">Login</Button> */}

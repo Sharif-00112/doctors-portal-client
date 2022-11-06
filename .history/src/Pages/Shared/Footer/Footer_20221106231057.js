@@ -125,17 +125,17 @@ const Footer = () => {
                                 <FontAwesomeIcon icon="fa-brands fa-facebook" />
                             </Button> */}
 
-                            <a href="https://www.facebook.com/" target="_blank" style={{ textDecoration:'none', color:'white' }}>
+                            <a href="https://www.facebook.com/" target="_blank">
                                 <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     FB
                                 </Button>
                             </a>
-                            <a href="https://www.google.com/" target="_blank" style={{ textDecoration:'none', color:'white' }}>
+                            <a href="https://www.google.com/" target="_blank">
                                 <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     G+
                                 </Button>
                             </a>
-                            <a href="https://twitter.com/" target="_blank" style={{ textDecoration:'none', color:'white' }}>
+                            <a href="https://twitter.com/" target="_blank">
                                 <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     TW
                                 </Button>

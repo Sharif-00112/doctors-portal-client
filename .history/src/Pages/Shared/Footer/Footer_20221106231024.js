@@ -125,17 +125,17 @@ const Footer = () => {
                                 <FontAwesomeIcon icon="fa-brands fa-facebook" />
                             </Button> */}
 
-                            <a href="https://www.facebook.com/" target="_blank" style={{ textDecoration:'none', color:'white' }}>
+                            <a href="https://www.facebook.com/" target="_blank">
                                 <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     FB
                                 </Button>
                             </a>
-                            <a href="https://www.google.com/" target="_blank" style={{ textDecoration:'none', color:'white' }}>
+                            <a href="https://www.google.com/" target="_blank">
                                 <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     G+
                                 </Button>
                             </a>
-                            <a href="https://twitter.com/" target="_blank" style={{ textDecoration:'none', color:'white' }}>
+                            <a href="https://twitter.com/" target="_blank">
                                 <Button sx={{ mt:3, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     TW
                                 </Button>
@@ -144,8 +144,8 @@ const Footer = () => {
                             <Typography sx={{ mt:7, fontSize: 16, fontWeight: 400 }} variant="" component="div">
                                     Call Now
                             </Typography>
-                            <a href="tel:+8801773241632" style={{ textDecoration:'none', color:'white' }}>
-                                <Button sx={{ mt:1, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
+                            <a href="tel:+8801773241632">
+                                <Button sx={{ mt:1, mr:2 }} variant="contained" style={{backgroundColor: '#5CE7ED', textDecoration:'none' }}>
                                     +8801773241632
                                 </Button>
                             </a>
