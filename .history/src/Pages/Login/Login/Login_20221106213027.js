@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Button, Container } from '@mui/material';
@@ -8,17 +8,9 @@ import TextField from '@mui/material/TextField';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Login = () => {
-    const [loginData, setLoginData] = useState({})
-
     const handleOnChange = e =>{
-        const field = e.target.name;
-        const value = e.target.value;
-        // console.log(field, value);
-        const newLoginData = { ...loginData };
-        newLoginData[field] = value;
-        setLoginData(newLoginData);
-    }
 
+    }
     const handleLoginSubmit = e => {
         e.preventDefault();
         alert('Login Clicked!');
@@ -37,17 +29,13 @@ const Login = () => {
                             <form onSubmit={ handleLoginSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
-                                    id="standard-basic"
-                                    name='email' 
-                                    onChange={handleOnChange}
+                                    id="standard-basic" 
                                     label="Your Email" 
                                     variant="standard" />
                                 <br />
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
                                     id="standard-basic" 
-                                    name='password'
-                                    onChange={handleOnChange}
                                     label="Your Password" 
                                     type="password"
                                     variant="standard" />

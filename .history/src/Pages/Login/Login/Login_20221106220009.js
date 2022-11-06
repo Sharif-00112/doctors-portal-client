@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Button, Container } from '@mui/material';
@@ -8,17 +8,11 @@ import TextField from '@mui/material/TextField';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Login = () => {
-    const [loginData, setLoginData] = useState({})
-
     const handleOnChange = e =>{
         const field = e.target.name;
         const value = e.target.value;
-        // console.log(field, value);
-        const newLoginData = { ...loginData };
-        newLoginData[field] = value;
-        setLoginData(newLoginData);
+        console.log(field, value);
     }
-
     const handleLoginSubmit = e => {
         e.preventDefault();
         alert('Login Clicked!');
