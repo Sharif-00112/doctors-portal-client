@@ -76,7 +76,6 @@ const useFirebase = () =>{
     };
 
     const customRegister = (email, password) =>{
-      setIsLoading(true);
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
@@ -86,8 +85,7 @@ const useFirebase = () =>{
       .catch((error) => {
         setError(error.code);
         setError(error.message);
-      })
-      .finally(() => setIsLoading(false));
+      });
     };
 
     const handleLoginSubmitBtn = e =>{
