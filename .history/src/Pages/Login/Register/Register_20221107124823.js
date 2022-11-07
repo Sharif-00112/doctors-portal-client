@@ -7,14 +7,14 @@ import registerImg from '../../../images/images/login.png'
 import TextField from '@mui/material/TextField';
 import Navigation from '../../Shared/Navigation/Navigation';
 import { NavLink } from 'react-router-dom';
-// import useAuth from '../../../hooks/useAuth';
-// import { useTitle } from '../../../hooks/useTitle';
+import useAuth from '../../../hooks/useAuth';
+import { useTitle } from '../../../hooks/useTitle';
  
  
 const Register = () => {
-    // const { error, handleRegisterSubmitBtn, handleEmailChange, handlePasswordChange } = useAuth();
+    const { error, handleRegisterSubmitBtn, handleEmailChange, handlePasswordChange } = useAuth();
 
-    // useTitle("Register");
+    useTitle("Register");
 
     const [registerData, setRegisterData] = useState({});
 
