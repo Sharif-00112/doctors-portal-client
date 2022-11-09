@@ -14,8 +14,7 @@ const Login = () => {
     const [loginData, setLoginData] = useState({})
 
     //destructuring hooks
-    // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
-    const { customLogin, user, error } = useAuth();
+    const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
 
     useTitle("Login");
 

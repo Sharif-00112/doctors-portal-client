@@ -7,17 +7,9 @@ import loginImg from '../../../images/images/login.png'
 import TextField from '@mui/material/TextField';
 import Navigation from '../../Shared/Navigation/Navigation';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
-import { useTitle } from '../../../hooks/useTitle';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
-
-    //destructuring hooks
-    // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
-    const { customLogin, user, error } = useAuth();
-
-    useTitle("Login");
 
     const handleOnChange = e =>{
         const field = e.target.name;
@@ -30,9 +22,7 @@ const Login = () => {
   
     const handleLoginSubmit = e => {
         e.preventDefault();
-        customLogin( loginData.email, loginData.password);
-        // alert('Login Clicked!');
-        // alert(error);s
+        alert('Login Clicked!');
     }
 
     return (
@@ -45,16 +35,6 @@ const Login = () => {
                             <Typography sx={{ my:2, fontSize: 25, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h4" component="div">
                                 User Login
                             </Typography>
-                            {
-                                user?.email ?
-                                <Typography sx={{ my:2, fontSize: 20, fontWeight: 600 }} style={{color: 'gray'}} variant="h4" component="div">
-                                    Logged in as "{user.email}"
-                                </Typography>
-                                :
-                                <Typography sx={{ my:3, fontSize: 14, fontWeight: 600 }} style={{color: 'gray'}} variant="h4" component="div">
-                                    {error}
-                                </Typography>
-                            }
                             <form onSubmit={ handleLoginSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}

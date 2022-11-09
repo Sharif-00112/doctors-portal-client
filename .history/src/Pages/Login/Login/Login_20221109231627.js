@@ -14,8 +14,7 @@ const Login = () => {
     const [loginData, setLoginData] = useState({})
 
     //destructuring hooks
-    // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
-    const { customLogin, user, error } = useAuth();
+    const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
 
     useTitle("Login");
 
@@ -51,7 +50,7 @@ const Login = () => {
                                     Logged in as "{user.email}"
                                 </Typography>
                                 :
-                                <Typography sx={{ my:3, fontSize: 14, fontWeight: 600 }} style={{color: 'gray'}} variant="h4" component="div">
+                                <Typography sx={{ my:2, fontSize: 14, fontWeight: 600 }} style={{color: 'gray'}} variant="h4" component="div">
                                     {error}
                                 </Typography>
                             }

@@ -14,8 +14,7 @@ const Login = () => {
     const [loginData, setLoginData] = useState({})
 
     //destructuring hooks
-    // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
-    const { customLogin, user, error } = useAuth();
+    const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
 
     useTitle("Login");
 
@@ -31,8 +30,8 @@ const Login = () => {
     const handleLoginSubmit = e => {
         e.preventDefault();
         customLogin( loginData.email, loginData.password);
-        // alert('Login Clicked!');
-        // alert(error);s
+        alert('Login Clicked!');
+        alert(error);
     }
 
     return (
@@ -47,12 +46,12 @@ const Login = () => {
                             </Typography>
                             {
                                 user?.email ?
-                                <Typography sx={{ my:2, fontSize: 20, fontWeight: 600 }} style={{color: 'gray'}} variant="h4" component="div">
+                                <Typography sx={{ my:2, fontSize: 25, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h4" component="div">
                                     Logged in as "{user.email}"
                                 </Typography>
                                 :
-                                <Typography sx={{ my:3, fontSize: 14, fontWeight: 600 }} style={{color: 'gray'}} variant="h4" component="div">
-                                    {error}
+                                <Typography sx={{ my:2, fontSize: 25, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h4" component="div">
+                                
                                 </Typography>
                             }
                             <form onSubmit={ handleLoginSubmit }>
