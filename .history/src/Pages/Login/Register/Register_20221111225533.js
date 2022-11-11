@@ -110,8 +110,6 @@ const Register = () => {
                             {isLoading && <CircularProgress />}
                             {/* success alert  */}
                             {user?.email && <Alert severity="success">Registration succeeded!</Alert>}
-                            {/* error  */}
-                            {error && <Alert severity="error">{error}</Alert>}
                         </Grid>
                         <Grid xs={12} md={6}>
                             <img style={{ width:'80%' }} src={registerImg} alt="" />

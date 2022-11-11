@@ -90,9 +90,9 @@ const Register = () => {
                                     type="password"
                                     variant="standard" />
                                 <br />
-                                {/* <Typography sx={{ mt:2, fontSize: 14, fontWeight: 400 }} style={{color: 'orange'}} variant="h6" component="div">
+                                <Typography sx={{ mt:2, fontSize: 14, fontWeight: 400 }} style={{color: 'orange'}} variant="h6" component="div">
                                     "Hints: Password should have minimum 8 characters length, 1 letter in Upper Case, 1 letter in Lower Case, 1 Special Character and 1 number"
-                                </Typography> */}
+                                </Typography>
                                 <br />
                                 <Button type='submit' sx={{ width:'50%',m:3 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     Register
@@ -109,9 +109,7 @@ const Register = () => {
                             {/* Spinner  */}
                             {isLoading && <CircularProgress />}
                             {/* success alert  */}
-                            {user?.email && <Alert severity="success">Registration succeeded!</Alert>}
-                            {/* error  */}
-                            {error && <Alert severity="error">{error}</Alert>}
+                            {user?.email && <Alert severity="success">This is a success alert — check it out!</Alert>}
                         </Grid>
                         <Grid xs={12} md={6}>
                             <img style={{ width:'80%' }} src={registerImg} alt="" />

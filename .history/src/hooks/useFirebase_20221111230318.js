@@ -67,7 +67,6 @@ const useFirebase = () =>{
       .then((userCredential) => {
         // Signed in 
         setUser(userCredential.user);
-        setError('');
       })
       .catch((error) => {
         setError(error.code);

@@ -9,15 +9,13 @@ import Navigation from '../../Shared/Navigation/Navigation';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { useTitle } from '../../../hooks/useTitle';
-import CircularProgress from '@mui/material/CircularProgress';
-import Alert from '@mui/material/Alert';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
 
     //destructuring hooks
     // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
-    const { customLogin, user, error, isLoading } = useAuth();
+    const { customLogin, user, error } = useAuth();
 
     useTitle("Login");
 
@@ -57,7 +55,7 @@ const Login = () => {
                                     {error}
                                 </Typography>
                             } */}
-                            { !isLoading && <form onSubmit={ handleLoginSubmit }>
+                            <form onSubmit={ handleLoginSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
                                     required
@@ -88,13 +86,8 @@ const Login = () => {
                                         New user? Please Register here
                                     </Button>
                                 </NavLink>
-                            </form>}
-                            {/* Spinner  */}
-                            {isLoading && <CircularProgress />}
-                            {/* success alert  */}
-                            {user?.email && <Alert severity="success">Login succeeded!</Alert>}
-                            {/* error  */}
-                            {error && <Alert severity="error">{error}</Alert>}
+                            </form>
+
                         </Grid>
                         <Grid xs={12} md={6}>
                             <img style={{ width:'80%' }} src={loginImg} alt="" />

@@ -67,7 +67,6 @@ const useFirebase = () =>{
       .then((userCredential) => {
         // Signed in 
         setUser(userCredential.user);
-        setError('');
       })
       .catch((error) => {
         setError(error.code);
@@ -83,10 +82,9 @@ const useFirebase = () =>{
         // Signed in 
         // const user = userCredential.user;
         // console.log(user);
-        setError('');
       })
       .catch((error) => {
-        setError(error.code);
+        // setError(error.code);
         setError(error.message);
       })
       .finally(() => setIsLoading(false));

@@ -11,11 +11,6 @@ const PrivateRoute = ({children}) => {
     // const {user, isLoading} = useAuth();
     const { user, isLoading } = useAuth();
   
-    // if(isLoading){
-    //     return <Spinner className='m-2 p-2' animation="border" role="status">
-    //         <span className="visually-hidden">Loading...</span>
-    //     </Spinner>
-    // }
     if(isLoading){ return <CircularProgress /> }
     return (
         user.email ? children 
