@@ -6,7 +6,6 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
-import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
               </PrivateRoute>
             }> </Route>
             {/* <Route exact path = '/appointment' element={<Appointment/>}/> */}
-            <Route exact path = '*' element={<NotFound/>}/>
+            <Route exact path = '*' element={<Home/>}/>
           </Routes>
           {/* <Footer></Footer> */} 
         </Router>

@@ -19,7 +19,7 @@ const pages = [
     <Link 
         // style={{ textDecoration:'none', color:'white' }}
         style={{ textDecoration:'none' }}
-        to = '/home'>
+        to = '/login'>
         {/* <Button color="inherit">Appointment</Button> */}
         Home
     </Link>,

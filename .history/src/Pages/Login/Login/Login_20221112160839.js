@@ -50,10 +50,6 @@ const Login = () => {
                             <Typography sx={{ my:2, fontSize: 25, fontWeight: 600 }} style={{color: '#5CE7ED'}} variant="h4" component="div">
                                 User Login
                             </Typography>
-                            
-                            {/* error  */}
-                            {error && <Alert severity="error">{error}</Alert>}
-                            
                             {/* {
                                 user?.email ?
                                 <Typography sx={{ my:2, fontSize: 20, fontWeight: 600 }} style={{color: 'gray'}} variant="h4" component="div">
@@ -64,8 +60,7 @@ const Login = () => {
                                     {error}
                                 </Typography>
                             } */}
-                            
-                            { (!isLoading && !user.email) && <form onSubmit={ handleLoginSubmit }>
+                            { !isLoading && <form onSubmit={ handleLoginSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
                                     required
@@ -109,7 +104,9 @@ const Login = () => {
                             
                             {/* Spinner  */}
                             {isLoading && <CircularProgress />}
-
+                            
+                            {/* error  */}
+                            {error && <Alert severity="error">{error}</Alert>}
                         </Grid>
                         <Grid xs={12} md={6}>
                             <img style={{ width:'80%' }} src={loginImg} alt="" />
