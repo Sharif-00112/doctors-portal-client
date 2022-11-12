@@ -17,7 +17,7 @@ const Login = () => {
 
     //destructuring hooks
     // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
-    const { customLogin, user, error, isLoading, signInUsingGoogle } = useAuth();
+    const { customLogin, user, error, isLoading } = useAuth();
 
     useTitle("Login");
 
@@ -79,12 +79,6 @@ const Login = () => {
                                 <br />
                                 <Button type='submit' sx={{ width:'50%',m:3 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     Login
-                                </Button>
-                                <br />
-                                Or
-                                <br />
-                                <Button onClick={signInUsingGoogle} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
-                                    Login with GOOGLE
                                 </Button>
                                 <br />
                                 <NavLink 

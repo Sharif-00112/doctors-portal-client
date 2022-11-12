@@ -15,7 +15,7 @@ import Alert from '@mui/material/Alert';
 
 const Register = () => {
     // const { error, customRegister, handleRegisterSubmitBtn, handleEmailChange, handlePasswordChange } = useAuth();
-    const { error, customRegister, isLoading, user, signInUsingGoogle } = useAuth();
+    const { error, customRegister, isLoading, user } = useAuth();
 
     useTitle("Register");
 
@@ -100,8 +100,8 @@ const Register = () => {
                                 <br />
                                 Or
                                 <br />
-                                <Button onClick={signInUsingGoogle} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
-                                    Register with GOOGLE
+                                <Button type='' sx={{ width:'75%',m:2 }} variant="contained" style={{backgroundColor: 'red'}}>
+                                    Sign up with GOOGLE
                                 </Button>
                                 <br />
                                 <NavLink 
@@ -115,7 +115,7 @@ const Register = () => {
                             {/* Spinner  */}
                             {isLoading && <CircularProgress />}
                             {/* success alert  */}
-                            {user?.email && <Alert severity="success">Registration succeeded for "{user.email}"</Alert>}
+                            {user?.email && <Alert severity="success">Registration succeeded!</Alert>}
                             {/* error  */}
                             {error && <Alert severity="error">{error}</Alert>}
                         </Grid>

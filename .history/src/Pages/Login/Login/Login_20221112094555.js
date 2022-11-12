@@ -17,7 +17,7 @@ const Login = () => {
 
     //destructuring hooks
     // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
-    const { customLogin, user, error, isLoading, signInUsingGoogle } = useAuth();
+    const { customLogin, user, error, isLoading } = useAuth();
 
     useTitle("Login");
 
@@ -81,12 +81,6 @@ const Login = () => {
                                     Login
                                 </Button>
                                 <br />
-                                Or
-                                <br />
-                                <Button onClick={signInUsingGoogle} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
-                                    Login with GOOGLE
-                                </Button>
-                                <br />
                                 <NavLink 
                                     // style={{ textDecoration:'none'}} 
                                     to='/register'>
@@ -98,7 +92,7 @@ const Login = () => {
                             {/* Spinner  */}
                             {isLoading && <CircularProgress />}
                             {/* success alert  */}
-                            {user?.email && <Alert severity="success">Login succeeded for "{user.email}"</Alert>}
+                            {user?.email && <Alert severity="success">Login succeeded for {user.email}</Alert>}
                             {/* error  */}
                             {error && <Alert severity="error">{error}</Alert>}
                         </Grid>

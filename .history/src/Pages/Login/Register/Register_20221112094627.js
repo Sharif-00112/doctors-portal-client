@@ -101,7 +101,7 @@ const Register = () => {
                                 Or
                                 <br />
                                 <Button onClick={signInUsingGoogle} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
-                                    Register with GOOGLE
+                                    Sign up with GOOGLE
                                 </Button>
                                 <br />
                                 <NavLink 

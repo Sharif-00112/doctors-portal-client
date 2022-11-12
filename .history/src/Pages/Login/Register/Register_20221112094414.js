@@ -101,7 +101,7 @@ const Register = () => {
                                 Or
                                 <br />
                                 <Button onClick={signInUsingGoogle} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
-                                    Register with GOOGLE
+                                    Sign up with GOOGLE
                                 </Button>
                                 <br />
                                 <NavLink 
@@ -115,7 +115,7 @@ const Register = () => {
                             {/* Spinner  */}
                             {isLoading && <CircularProgress />}
                             {/* success alert  */}
-                            {user?.email && <Alert severity="success">Registration succeeded for "{user.email}"</Alert>}
+                            {user?.email && <Alert severity="success">Registration succeeded!</Alert>}
                             {/* error  */}
                             {error && <Alert severity="error">{error}</Alert>}
                         </Grid>
