@@ -19,8 +19,9 @@ const Login = () => {
     //destructuring hooks
     // const { customLogin, signInUsingGoogle, signInUsingFacebook, user, error, handleLoginSubmitBtn, handleEmailChange, handlePasswordChange, logout } = useAuth();
     const { customLogin, user, error, isLoading, signInUsingGoogle } = useAuth();
-    // console.log(user.photoURL);
 
+    console.log(user);
+    
     useTitle("Login");
 
     const handleOnChange = e =>{

@@ -163,7 +163,7 @@ const ResponsiveNavigation = () => {
                         user?.email ?
                         <NavLink 
                             style={{ textDecoration:'none', color:'white' }}
-                            to = '/login'>
+                            to = '/home'>
                             <Button sx={{ mx:2 }} onClick={logout} color="inherit">Logout</Button>
                         </NavLink>
                         :

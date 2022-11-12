@@ -16,14 +16,7 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const pages = [
-    <Link 
-        // style={{ textDecoration:'none', color:'white' }}
-        style={{ textDecoration:'none' }}
-        to = '/login'>
-        {/* <Button color="inherit">Appointment</Button> */}
-        Home
-    </Link>,
-    // 'Products', 
+    'Products', 
     'Pricing', 
     'Blog',
     <Link 
@@ -35,14 +28,7 @@ const pages = [
     </Link>
 ];
 const settings = [
-    // 'Profile', 
-    <Link 
-        // style={{ textDecoration:'none', color:'white' }}
-        style={{ textDecoration:'none' }}
-        to = '/login'>
-        {/* <Button color="inherit">Appointment</Button> */}
-        Profile
-    </Link>,
+    'Profile', 
     'Account', 
     'Dashboard'
 ];
@@ -163,14 +149,14 @@ const ResponsiveNavigation = () => {
                         user?.email ?
                         <NavLink 
                             style={{ textDecoration:'none', color:'white' }}
-                            to = '/login'>
+                            to = '/home'>
                             <Button sx={{ mx:2 }} onClick={logout} color="inherit">Logout</Button>
                         </NavLink>
                         :
                         <NavLink 
                             style={{ textDecoration:'none', color:'white' }}
                             to = '/login'>
-                            <Button sx={{ mx:2 }} color="inherit">Login</Button>
+                            <Button color="inherit">Login</Button>
                         </NavLink>
                     }
 

@@ -16,14 +16,7 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const pages = [
-    <Link 
-        // style={{ textDecoration:'none', color:'white' }}
-        style={{ textDecoration:'none' }}
-        to = '/login'>
-        {/* <Button color="inherit">Appointment</Button> */}
-        Home
-    </Link>,
-    // 'Products', 
+    'Products', 
     'Pricing', 
     'Blog',
     <Link 
@@ -35,16 +28,11 @@ const pages = [
     </Link>
 ];
 const settings = [
-    // 'Profile', 
-    <Link 
-        // style={{ textDecoration:'none', color:'white' }}
-        style={{ textDecoration:'none' }}
-        to = '/login'>
-        {/* <Button color="inherit">Appointment</Button> */}
-        Profile
-    </Link>,
+    'Profile', 
     'Account', 
-    'Dashboard'
+    'Dashboard', 
+    'Logout',
+    
 ];
  
 const ResponsiveNavigation = () => {
@@ -158,21 +146,6 @@ const ResponsiveNavigation = () => {
                         </Button>
                         ))}
                     </Box>
-                    
-                    {
-                        user?.email ?
-                        <NavLink 
-                            style={{ textDecoration:'none', color:'white' }}
-                            to = '/login'>
-                            <Button sx={{ mx:2 }} onClick={logout} color="inherit">Logout</Button>
-                        </NavLink>
-                        :
-                        <NavLink 
-                            style={{ textDecoration:'none', color:'white' }}
-                            to = '/login'>
-                            <Button sx={{ mx:2 }} color="inherit">Login</Button>
-                        </NavLink>
-                    }
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
@@ -204,6 +177,22 @@ const ResponsiveNavigation = () => {
                         </Menu>
                     </Box>
                     </Toolbar>
+                    
+                    {
+                        user?.email ?
+                        <NavLink 
+                            style={{ textDecoration:'none', color:'white' }}
+                            to = '/login'>
+                            <Button onClick={logout} color="inherit">Logout</Button>
+                        </NavLink>
+                        :
+                        <NavLink 
+                            style={{ textDecoration:'none', color:'white' }}
+                            to = '/login'>
+                            <Button color="inherit">Login</Button>
+                        </NavLink>
+                    }
+
                 </Container>
             </AppBar>
         </div>

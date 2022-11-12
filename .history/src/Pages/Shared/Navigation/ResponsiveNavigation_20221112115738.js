@@ -11,19 +11,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import AdbIcon from '@mui/icons-material/Adb';
 import useAuth from '../../../hooks/useAuth';
 
 const pages = [
-    <Link 
-        // style={{ textDecoration:'none', color:'white' }}
-        style={{ textDecoration:'none' }}
-        to = '/login'>
-        {/* <Button color="inherit">Appointment</Button> */}
-        Home
-    </Link>,
-    // 'Products', 
+    'Products', 
     'Pricing', 
     'Blog',
     <Link 
@@ -34,18 +27,7 @@ const pages = [
         Appointment
     </Link>
 ];
-const settings = [
-    // 'Profile', 
-    <Link 
-        // style={{ textDecoration:'none', color:'white' }}
-        style={{ textDecoration:'none' }}
-        to = '/login'>
-        {/* <Button color="inherit">Appointment</Button> */}
-        Profile
-    </Link>,
-    'Account', 
-    'Dashboard'
-];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
  
 const ResponsiveNavigation = () => {
     const { user, logout } = useAuth();
@@ -158,21 +140,6 @@ const ResponsiveNavigation = () => {
                         </Button>
                         ))}
                     </Box>
-                    
-                    {
-                        user?.email ?
-                        <NavLink 
-                            style={{ textDecoration:'none', color:'white' }}
-                            to = '/login'>
-                            <Button sx={{ mx:2 }} onClick={logout} color="inherit">Logout</Button>
-                        </NavLink>
-                        :
-                        <NavLink 
-                            style={{ textDecoration:'none', color:'white' }}
-                            to = '/login'>
-                            <Button sx={{ mx:2 }} color="inherit">Login</Button>
-                        </NavLink>
-                    }
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
