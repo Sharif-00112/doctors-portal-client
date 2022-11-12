@@ -28,7 +28,7 @@ const Register = () => {
         const newRegisterData = { ...registerData };
         newRegisterData[field] = value;
         setRegisterData(newRegisterData);
-        // console.log(newRegisterData);
+        console.log(newRegisterData);
         // handleEmailChange(registerData.email);
         // handlePasswordChange(registerData.password);
     }

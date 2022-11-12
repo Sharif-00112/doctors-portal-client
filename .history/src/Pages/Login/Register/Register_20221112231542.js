@@ -15,7 +15,7 @@ import Alert from '@mui/material/Alert';
 
 const Register = () => {
     // const { error, customRegister, handleRegisterSubmitBtn, handleEmailChange, handlePasswordChange } = useAuth();
-    const { error, customRegister, isLoading, user, signInUsingGoogle } = useAuth();
+    const { error, customRegister, isLoading, user, signInUsingGoogle, setUserName, handleNameChange } = useAuth();
 
     useTitle("Register");
 
@@ -64,14 +64,14 @@ const Register = () => {
                             {/* error  */}
                             {error && <Alert severity="error">{error}</Alert>}
                             
-                            { (!isLoading && !user.email) && <form onSubmit={ handleRegisterSubmit }>
+                            { (!isLoading && !user.email) && <form onSubmit={ [handleRegisterSubmit, setUserName] }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
                                     // required
                                     id="standard-basic"
                                     name='name' 
                                     type='text'
-                                    onChange={handleOnChange}
+                                    onChange={handleNameChange}
                                     label="Your Name" 
                                     variant="standard" />
                                 <br />

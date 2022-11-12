@@ -28,7 +28,6 @@ const Register = () => {
         const newRegisterData = { ...registerData };
         newRegisterData[field] = value;
         setRegisterData(newRegisterData);
-        // console.log(newRegisterData);
         // handleEmailChange(registerData.email);
         // handlePasswordChange(registerData.password);
     }
@@ -67,7 +66,7 @@ const Register = () => {
                             { (!isLoading && !user.email) && <form onSubmit={ handleRegisterSubmit }>
                                 <TextField 
                                     sx={{ width:'75%', m:1 }}
-                                    // required
+                                    required
                                     id="standard-basic"
                                     name='name' 
                                     type='text'

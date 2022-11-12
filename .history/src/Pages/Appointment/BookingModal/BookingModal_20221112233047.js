@@ -68,7 +68,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             disabled
-                            label="Time Slot"
                             sx={{width: "90%", m:1 }}
                             id="outlined-size-small"
                             defaultValue={time}
@@ -77,7 +76,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                         <TextField
                             sx={{width: "90%", m:1 }}
                             required
-                            label="Full Name"
                             id="outlined-size-small"
                             placeholder='Your Name'
                             defaultValue={user.displayName}
@@ -85,8 +83,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             sx={{width: "90%", m:1 }}
-                            // required
-                            label="Email Address"
+                            required
                             id="outlined-size-small"
                             placeholder='Your Email'
                             defaultValue={user.email}
@@ -95,7 +92,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                         <TextField
                             sx={{width: "90%", m:1 }}
                             required
-                            label="Mobile"
                             id="outlined-size-small"
                             placeholder='Your Email'
                             defaultValue='+880'

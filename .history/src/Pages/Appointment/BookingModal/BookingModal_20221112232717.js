@@ -60,7 +60,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                         <form onSubmit={handleBookingSubmit}>
                         <TextField
                             disabled
-                            label="Date"
                             sx={{width: "90%", m:1 }}
                             id="outlined-size-small"
                             defaultValue={date.toDateString()}
@@ -68,7 +67,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             disabled
-                            label="Time Slot"
                             sx={{width: "90%", m:1 }}
                             id="outlined-size-small"
                             defaultValue={time}
@@ -76,8 +74,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             sx={{width: "90%", m:1 }}
-                            required
-                            label="Full Name"
                             id="outlined-size-small"
                             placeholder='Your Name'
                             defaultValue={user.displayName}
@@ -85,8 +81,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             sx={{width: "90%", m:1 }}
-                            // required
-                            label="Email Address"
                             id="outlined-size-small"
                             placeholder='Your Email'
                             defaultValue={user.email}
@@ -94,11 +88,9 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             sx={{width: "90%", m:1 }}
-                            required
-                            label="Mobile"
                             id="outlined-size-small"
                             placeholder='Your Email'
-                            defaultValue='+880'
+                            defaultValue='Phone Number'
                             size="small"
                             />
                         <Button type='submit' sx={{m:1}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>

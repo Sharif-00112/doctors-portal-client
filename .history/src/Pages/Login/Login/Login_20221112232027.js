@@ -105,7 +105,7 @@ const Login = () => {
                             </form>}
 
                             {/* success alert  */}
-                            {user?.email && <Alert severity="success">Login succeeded for email: {user.email}, Name: {user.displayName}</Alert>}
+                            {user?.email && <Alert severity="success">Login succeeded for Email: {user.email}, Name: {user.displayName}</Alert>}
                             
                             {/* Spinner  */}
                             {isLoading && <CircularProgress />}
