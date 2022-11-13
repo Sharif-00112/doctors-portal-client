@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 import Booking from '../Booking/Booking';
-import Alert from '@mui/material/Alert';
 
 const bookings = [
     {
@@ -54,8 +53,7 @@ const AvailableAppointments = ({ date }) => {
             <Typography sx={{ mt: 5, mb:3, fontSize: 25, fontWeight: 600, color: '#5CE7ED'}} variant='h4' gutterBottom component='div'>
                 Available Appointments on: {date.toDateString()}
             </Typography>
-            {bookingSuccess && <Alert severity="info">Appointment booked successfully — check it out!</Alert>}
-            <br />
+
             <Box sx={{ flexGrow: 1 , mt:5}}>
                 <Grid container spacing={2}>
                     {

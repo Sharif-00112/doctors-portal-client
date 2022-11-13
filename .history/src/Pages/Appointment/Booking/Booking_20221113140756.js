@@ -32,7 +32,6 @@ const Booking = ({ booking, date, setBookingSuccess }) => {
                 handleBookingClose={handleBookingClose}
                 openBooking={openBooking}
                 date={date}
-                setBookingSuccess={setBookingSuccess}
             ></BookingModal>
         </div>
     );

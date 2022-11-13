@@ -55,7 +55,7 @@ const AvailableAppointments = ({ date }) => {
                 Available Appointments on: {date.toDateString()}
             </Typography>
             {bookingSuccess && <Alert severity="info">Appointment booked successfully — check it out!</Alert>}
-            <br />
+
             <Box sx={{ flexGrow: 1 , mt:5}}>
                 <Grid container spacing={2}>
                     {

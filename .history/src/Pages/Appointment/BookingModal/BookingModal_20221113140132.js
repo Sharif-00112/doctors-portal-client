@@ -21,7 +21,7 @@ const style = {
     p: 4,
 };
 
-const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBookingSuccess }) => {
+const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
     const { name, time } = booking;
     const { user } = useAuth();
     const initialInfo = {
@@ -66,7 +66,6 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
             // console.log(data);
             if(data.insertedId){
                 alert('Appointment Submitted Successfully!');
-                setBookingSuccess(true);
                 handleBookingClose();
             }
         })

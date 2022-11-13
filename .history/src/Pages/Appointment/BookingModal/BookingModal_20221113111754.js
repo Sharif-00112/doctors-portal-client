@@ -21,56 +21,27 @@ const style = {
     p: 4,
 };
 
-const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBookingSuccess }) => {
-    const { name, time } = booking;
+const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
+    const { name, time } = booking
     const { user } = useAuth();
-    const initialInfo = {
-        patientName: user.displayName,
-        email: user.email,
-        phone: ''
-    };
-    const [bookingInfo, setBookingInfo] = useState(initialInfo);
+
+    const [bookingInfo, setBookingInfo] = useState({});
 
     const handleOnBlur = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-        const newInfo = {...bookingInfo};
-        newInfo[field] = value;
-        // console.log(newInfo);
-        setBookingInfo(newInfo);
+
     }
 
     const handleBookingSubmit = e =>{
         e.preventDefault();
 
-        //collect form data and other info 
-        const appointment = {
-            ...bookingInfo,
-            serviceName: name,
-            time,
-            date: date.toDateString(),
-            bookingPlacementTime: new Date()
-        }
-        // console.log(appointment);
+        //collect form data  
+
 
         //send data to the server and database
-        fetch('http://localhost:3005/appointments', {
-            method: 'POST',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(appointment)
-        })
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data);
-            if(data.insertedId){
-                alert('Appointment Submitted Successfully!');
-                setBookingSuccess(true);
-                handleBookingClose();
-            }
-        })
-        // alert('Appointment Submitted');
+
+
+        alert('Appointment Submitted');
+        handleBookingClose()
     }
 
     return (
@@ -137,7 +108,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
                             id="outlined-size-small"
                             placeholder='Phone Number'
                             name='phone'
-                            // defaultValue='+880'
+                            defaultValue='+880'
                             onBlur={handleOnBlur}
                             size="small"
                             />

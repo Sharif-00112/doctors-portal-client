@@ -65,7 +65,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
         .then(data => {
             // console.log(data);
             if(data.insertedId){
-                alert('Appointment Submitted Successfully!');
+                // alert('Appointment Submitted Successfully!');
                 setBookingSuccess(true);
                 handleBookingClose();
             }
