@@ -144,10 +144,12 @@ function Dashboard(props) {
                 <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
                   Please select your booking date:
                 </Typography>
-                <Calendar
-                  date={date}
-                  setDate={setDate}
-                ></Calendar>
+                <div sx={{mx:3}}>
+                  <Calendar
+                    date={date}
+                    setDate={setDate}
+                  ></Calendar>
+                </div>
               </Grid>
               <Grid xs={12} md={7}>
                 <Appointments

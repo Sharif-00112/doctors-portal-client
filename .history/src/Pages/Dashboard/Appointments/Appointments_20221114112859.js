@@ -1,0 +1,63 @@
+import { Typography } from '@mui/material';
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import useAuth from '../../../hooks/useAuth';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+const Appointments = () => {
+    const { user } = useAuth();
+    const [appointments, setAppointments] = useState([]);
+
+    useEffect( () =>{
+        const url = `http://localhost:3005/appointments?email=${user.email}`
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setAppointments(data))
+    },[user.email])
+
+    return (
+        <div>
+            <Typography sx={{ fontWeight: 600 }} variant="h4" component="div">
+                Appointments: {appointments.length}
+            </Typography>
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="Appointments table">
+                    <TableHead>
+                    <TableRow>
+                        <TableCell>Patient Name</TableCell>
+                        <TableCell align="right">Calories</TableCell>
+                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
+                        <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+                        <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                    </TableRow>
+                    </TableHead>
+                    <TableBody>
+                    {appointments.map((row) => (
+                        <TableRow
+                        key={row.name}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                        <TableCell component="th" scope="row">
+                            {row.patientName}
+                        </TableCell>
+                        <TableCell align="right">{row.calories}</TableCell>
+                        <TableCell align="right">{row.fat}</TableCell>
+                        <TableCell align="right">{row.carbs}</TableCell>
+                        <TableCell align="right">{row.protein}</TableCell>
+                        </TableRow>
+                    ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </div>
+    );
+};
+
+export default Appointments;

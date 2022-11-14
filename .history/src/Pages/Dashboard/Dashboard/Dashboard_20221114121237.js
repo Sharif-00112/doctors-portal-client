@@ -141,7 +141,7 @@ function Dashboard(props) {
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Grid xs={12} md={5}>
-                <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
+                <Typography sx={{ fontWeight: 600, mb:3 }} variant="h6" component="div">
                   Please select your booking date:
                 </Typography>
                 <Calendar

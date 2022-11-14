@@ -145,6 +145,7 @@ function Dashboard(props) {
                   Please select your booking date:
                 </Typography>
                 <Calendar
+                  sx={{mx:3}}
                   date={date}
                   setDate={setDate}
                 ></Calendar>

@@ -21,7 +21,6 @@ import Calendar from '../../Shared/Calendar/Calendar';
 import Appointments from '../Appointments/Appointments';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
  
 const drawerWidth = 220;
 
@@ -92,11 +91,11 @@ function Dashboard(props) {
             Dashboard
           </Typography>
           <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            // style={{ textDecoration:'none' }}
+            // style={{ textDecoration:'none', color:'white' }}
+            style={{ textDecoration:'none' }}
             to = '/appointment'>
-            <Button sx={{mx:3}} color="inherit">Appointment</Button>
-            {/* Appointment */}
+            {/* <Button color="inherit">Appointment</Button> */}
+            Appointment
           </Link>
         </Toolbar>
       </AppBar>
@@ -141,9 +140,6 @@ function Dashboard(props) {
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Grid xs={12} md={5}>
-                <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
-                  Please select your booking date:
-                </Typography>
                 <Calendar
                   date={date}
                   setDate={setDate}

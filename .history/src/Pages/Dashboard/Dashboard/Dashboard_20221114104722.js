@@ -18,17 +18,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
 import Calendar from '../../Shared/Calendar/Calendar';
-import Appointments from '../Appointments/Appointments';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
  
 const drawerWidth = 220;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [date, setDate] = useState(new Date());
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -91,13 +86,6 @@ function Dashboard(props) {
           <Typography variant="h6" noWrap component="div">
             Dashboard
           </Typography>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            // style={{ textDecoration:'none' }}
-            to = '/appointment'>
-            <Button sx={{mx:3}} color="inherit">Appointment</Button>
-            {/* Appointment */}
-          </Link>
         </Toolbar>
       </AppBar>
       <Box
@@ -138,21 +126,14 @@ function Dashboard(props) {
       >
         <Toolbar />
         <Typography paragraph>
+          ...Contents...
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
-              <Grid xs={12} md={5}>
-                <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
-                  Please select your booking date:
-                </Typography>
-                <Calendar
-                  date={date}
-                  setDate={setDate}
-                ></Calendar>
+              <Grid xs={12} md={6}>
+                <Calendar></Calendar>
               </Grid>
-              <Grid xs={12} md={7}>
-                <Appointments
-                  date={date}
-                ></Appointments>
+              <Grid xs={12} md={6}>
+                6
               </Grid>
             </Grid>
           </Box>
