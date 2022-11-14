@@ -43,7 +43,7 @@ function Dashboard(props) {
           </ListItem>
         ))}
       </List>
-      {/* <Divider /> */}
+      <Divider />
       {/* <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>

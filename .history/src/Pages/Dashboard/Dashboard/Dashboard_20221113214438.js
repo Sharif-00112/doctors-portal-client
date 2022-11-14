@@ -17,7 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
  
-const drawerWidth = 220;
+const drawerWidth = 240;
 
 function Dashboard(props) {
   const { window } = props;
@@ -43,8 +43,8 @@ function Dashboard(props) {
           </ListItem>
         ))}
       </List>
-      {/* <Divider /> */}
-      {/* <List>
+      <Divider />
+      <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -55,7 +55,7 @@ function Dashboard(props) {
             </ListItemButton>
           </ListItem>
         ))}
-      </List> */}
+      </List>
     </div>
   );
 
@@ -82,7 +82,7 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Dashboard
+            Responsive drawer
           </Typography>
         </Toolbar>
       </AppBar>
@@ -124,7 +124,7 @@ function Dashboard(props) {
       >
         <Toolbar />
         <Typography paragraph>
-          ...Contents...
+          Contents...
         </Typography>
       </Box>
     </Box>

@@ -49,7 +49,7 @@ const Navigation = () => {
                                 <NavLink 
                                     style={{ textDecoration:'none', color:'white' }}
                                     to = '/dashboard'>
-                                    <Button color="inherit">Dashboard</Button>
+                                    <Button onClick={logout} color="inherit">Dashboard</Button>
                                 </NavLink>
                                 <NavLink 
                                     style={{ textDecoration:'none', color:'white' }}
