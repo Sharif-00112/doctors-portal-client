@@ -27,8 +27,6 @@ const useFirebase = () =>{
           // const token = credential.accessToken;
           // The signed-in user info.
           setUser(result.user);
-          // save user to the database
-          saveUserToDB(result.user.email, result.user.displayName, 'PUT');
       }).catch((error) => {
           // Handle Errors here.
           setError(error.code);
@@ -48,8 +46,6 @@ const useFirebase = () =>{
       .then((result) => {
         // The signed-in user info.
         setUser(result.user);
-        // save user to the database
-        saveUserToDB(result.user.email, result.user.displayName, 'PUT');
 
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         // const credential = FacebookAuthProvider.credentialFromResult(result);
@@ -92,7 +88,7 @@ const useFirebase = () =>{
         // console.log(user);
         setUser(userCredential.user);
         // save user to the database
-        saveUserToDB(userCredential.user.email, userCredential.user.displayName, 'POST')
+        saveUserToDB(user.email, user.displayName)
         // clear error message
         setError('');
       })
@@ -219,16 +215,8 @@ const useFirebase = () =>{
         });
     }
 
-    const saveUserToDB = (email, displayName, method) =>{
+    const saveUserToDB = (email, displayName) =>{
       const user = {email, displayName};
-      fetch('http://localhost:3005/users', {
-          method: method,
-          headers: {
-              'content-type' : 'application/json'
-          },
-          body: JSON.stringify(user)
-      })
-      .then()
     }
 
     return {
