@@ -16,26 +16,19 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-
-// import { Link } from 'react-router-dom';
+import Grid from '@mui/material/Unstable_Grid2';
+import Calendar from '../../Shared/Calendar/Calendar';
+import Appointments from '../Appointments/Appointments';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
  
 const drawerWidth = 220;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  
-  let match = useRouteMatch();
+  const [date, setDate] = useState(new Date());
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -105,22 +98,6 @@ function Dashboard(props) {
             <Button sx={{mx:3}} color="inherit">Appointment</Button>
             {/* Appointment */}
           </Link>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}`}>
-            <Button sx={{mx:3}} color="inherit">Dashboard</Button>
-          </Link>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}/makeAdmin`}>
-            <Button sx={{mx:3}} color="inherit">Make Admin</Button>
-          </Link>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}/addDoctor`}>
-            <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
-          </Link>
-
         </Toolbar>
       </AppBar>
       <Box
@@ -160,9 +137,24 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-
-
-
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid xs={12} md={5}>
+              <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
+                Please select your booking date:
+              </Typography>
+              <Calendar
+                date={date}
+                setDate={setDate}
+              ></Calendar>
+            </Grid>
+            <Grid xs={12} md={7}>
+              <Appointments
+                date={date}
+              ></Appointments>
+            </Grid>
+          </Grid>
+        </Box>
       </Box>
     </Box>
   );

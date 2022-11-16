@@ -107,20 +107,14 @@ function Dashboard(props) {
           </Link>
           <Link 
             style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}`}>
-            <Button sx={{mx:3}} color="inherit">Dashboard</Button>
+            to = '/appointment'>
+            <Button sx={{mx:3}} color="inherit">Appointment</Button>
           </Link>
           <Link 
             style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}/makeAdmin`}>
-            <Button sx={{mx:3}} color="inherit">Make Admin</Button>
+            to = '/appointment'>
+            <Button sx={{mx:3}} color="inherit">Appointment</Button>
           </Link>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}/addDoctor`}>
-            <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
-          </Link>
-
         </Toolbar>
       </AppBar>
       <Box

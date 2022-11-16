@@ -17,25 +17,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
  
 const drawerWidth = 220;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  
-  let match = useRouteMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -105,22 +94,6 @@ function Dashboard(props) {
             <Button sx={{mx:3}} color="inherit">Appointment</Button>
             {/* Appointment */}
           </Link>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}`}>
-            <Button sx={{mx:3}} color="inherit">Dashboard</Button>
-          </Link>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}/makeAdmin`}>
-            <Button sx={{mx:3}} color="inherit">Make Admin</Button>
-          </Link>
-          <Link 
-            style={{ textDecoration:'none', color:'white' }}
-            to = {`${url}/addDoctor`}>
-            <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
-          </Link>
-
         </Toolbar>
       </AppBar>
       <Box
