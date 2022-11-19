@@ -23,15 +23,12 @@ import { Button } from '@mui/material';
 
 import {
   BrowserRouter as Router,
-  // Switch as Routes,
-  Routes,
+  Switch,
   Route,
   Link,
-  useMatch,
+  useRouteMatch,
   useParams
 } from "react-router-dom";
-import DashboardHome from "../DashboardHome/DashboardHome";
-import MakeAdmin from "../MakeAdmin/MakeAdmin";
  
 const drawerWidth = 220;
 
@@ -39,7 +36,7 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   
-  let match = useMatch();
+  let match = useRouteMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -167,14 +164,14 @@ function Dashboard(props) {
       >
         <Toolbar />
 
-        <Routes>
-          <Route path={match.path}>
-            <DashboardHome></DashboardHome>
-          </Route>
+        <Switch>
           <Route path={`${match.path}/makeAdmin`}>
-            <MakeAdmin></MakeAdmin>
+            
           </Route>
-        </Routes>
+          <Route path={match.path}>
+            <h3>Please select a topic.</h3>
+          </Route>
+        </Switch>
 
       </Box>
     </Box>

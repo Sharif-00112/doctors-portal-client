@@ -23,15 +23,12 @@ import { Button } from '@mui/material';
 
 import {
   BrowserRouter as Router,
-  // Switch as Routes,
-  Routes,
+  Switch,
   Route,
   Link,
-  useMatch,
+  useRouteMatch,
   useParams
 } from "react-router-dom";
-import DashboardHome from "../DashboardHome/DashboardHome";
-import MakeAdmin from "../MakeAdmin/MakeAdmin";
  
 const drawerWidth = 220;
 
@@ -39,7 +36,7 @@ function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   
-  let match = useMatch();
+  let match = useRouteMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -112,20 +109,19 @@ function Dashboard(props) {
           
           <Link 
             style={{ textDecoration:'none', color:'white' }}
-            to={`${match.url}`}>
+            to={`${match.url}/props-v-state`}>
             <Button sx={{mx:3}} color="inherit">Dashboard</Button>
           </Link>
           <Link 
             style={{ textDecoration:'none', color:'white' }}
-            to={`${match.url}/makeAdmin`}>
+            to={`${match.url}/props-v-state`}>
             <Button sx={{mx:3}} color="inherit">Make Admin</Button>
           </Link>
           <Link 
             style={{ textDecoration:'none', color:'white' }}
-            to={`${match.url}/addDoctor`}>
+            to={`${match.url}/props-v-state`}>
             <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
           </Link>
-          
 
         </Toolbar>
       </AppBar>
@@ -167,14 +163,7 @@ function Dashboard(props) {
       >
         <Toolbar />
 
-        <Routes>
-          <Route path={match.path}>
-            <DashboardHome></DashboardHome>
-          </Route>
-          <Route path={`${match.path}/makeAdmin`}>
-            <MakeAdmin></MakeAdmin>
-          </Route>
-        </Routes>
+
 
       </Box>
     </Box>

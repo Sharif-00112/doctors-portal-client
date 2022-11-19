@@ -23,8 +23,7 @@ import { Button } from '@mui/material';
 
 import {
   BrowserRouter as Router,
-  // Switch as Routes,
-  Routes,
+  Switch,
   Route,
   Link,
   useMatch,
@@ -167,14 +166,15 @@ function Dashboard(props) {
       >
         <Toolbar />
 
-        <Routes>
+        <Switch>
           <Route path={match.path}>
             <DashboardHome></DashboardHome>
           </Route>
           <Route path={`${match.path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
           </Route>
-        </Routes>
+
+        </Switch>
 
       </Box>
     </Box>

@@ -23,7 +23,7 @@ import { Button } from '@mui/material';
 
 import {
   BrowserRouter as Router,
-  // Switch as Routes,
+  Switch as Routes,
   Routes,
   Route,
   Link,
