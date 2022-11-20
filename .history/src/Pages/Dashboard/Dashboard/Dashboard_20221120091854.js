@@ -17,33 +17,29 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Grid } from '@mui/material';
-import Calendar from "../../Shared/Calendar/Calendar";
-import Appointments from '../Appointments/Appointments';
 
-// import {
-//   BrowserRouter as Router,
-//   // Switch as Routes,
-//   Routes,
-//   Route,
-//   Link,
-//   useMatch,
-//   useParams
-// } from "react-router-dom";
-// import DashboardHome from "../DashboardHome/DashboardHome";
-// import MakeAdmin from "../MakeAdmin/MakeAdmin";
+// import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
+
+import {
+  BrowserRouter as Router,
+  // Switch as Routes,
+  Routes,
+  Route,
+  Link,
+  useMatch,
+  useParams
+} from "react-router-dom";
+import DashboardHome from "../DashboardHome/DashboardHome";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
  
 const drawerWidth = 220;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const [date, setDate] = useState(new Date());
   
-  // let match = useMatch();
+  let match = useMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -114,7 +110,7 @@ function Dashboard(props) {
             {/* Appointment */}
           </Link>
           
-          {/* <Link 
+          <Link 
             style={{ textDecoration:'none', color:'white' }}
             to={`${match.url}`}>
             <Button sx={{mx:3}} color="inherit">Dashboard</Button>
@@ -128,7 +124,7 @@ function Dashboard(props) {
             style={{ textDecoration:'none', color:'white' }}
             to={`${match.url}/addDoctor`}>
             <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
-          </Link> */}
+          </Link>
            
 
         </Toolbar>
@@ -171,34 +167,14 @@ function Dashboard(props) {
       >
         <Toolbar />
 
-        {/* <Routes>
+        <Routes>
           <Route path={match.path}>
             <DashboardHome></DashboardHome>
           </Route>
           <Route path={`${match.path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
           </Route>
-        </Routes> */}
-
-
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid xs={12} md={5}>
-              <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
-                Please select your booking date:
-              </Typography>
-              <Calendar
-                date={date}
-                setDate={setDate}
-              ></Calendar>
-            </Grid>
-            <Grid xs={12} md={7}>
-              <Appointments
-                date={date}
-              ></Appointments>
-            </Grid>
-          </Grid>
-        </Box>
+        </Routes>
 
       </Box>
     </Box>

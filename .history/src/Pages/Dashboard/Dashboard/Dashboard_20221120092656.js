@@ -17,11 +17,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { useState } from 'react';
+
 import { Link } from 'react-router-dom';
-import { Button, Grid } from '@mui/material';
-import Calendar from "../../Shared/Calendar/Calendar";
-import Appointments from '../Appointments/Appointments';
+import { Button } from '@mui/material';
 
 // import {
 //   BrowserRouter as Router,
@@ -40,8 +38,6 @@ const drawerWidth = 220;
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const [date, setDate] = useState(new Date());
   
   // let match = useMatch();
 
@@ -179,26 +175,6 @@ function Dashboard(props) {
             <MakeAdmin></MakeAdmin>
           </Route>
         </Routes> */}
-
-
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid xs={12} md={5}>
-              <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
-                Please select your booking date:
-              </Typography>
-              <Calendar
-                date={date}
-                setDate={setDate}
-              ></Calendar>
-            </Grid>
-            <Grid xs={12} md={7}>
-              <Appointments
-                date={date}
-              ></Appointments>
-            </Grid>
-          </Grid>
-        </Box>
 
       </Box>
     </Box>
