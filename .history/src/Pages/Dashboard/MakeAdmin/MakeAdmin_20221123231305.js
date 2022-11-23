@@ -8,7 +8,6 @@ const MakeAdmin = () => {
     const [success, setSuccess] = useState(false);
 
     const handleAdminSubmit = e =>{
-        setSuccess(false);
         const user = { email };
         e.preventDefault();
         fetch('http://localhost:3005/users/admin', {
@@ -22,7 +21,7 @@ const MakeAdmin = () => {
         .then(data => {
             // console.log(data);
             if(data.modifiedCount){
-                // console.log(data);
+                console.log(data);
                 setSuccess(true);
             }
         })

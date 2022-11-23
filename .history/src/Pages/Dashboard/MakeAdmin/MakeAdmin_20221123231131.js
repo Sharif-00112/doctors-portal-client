@@ -8,7 +8,6 @@ const MakeAdmin = () => {
     const [success, setSuccess] = useState(false);
 
     const handleAdminSubmit = e =>{
-        setSuccess(false);
         const user = { email };
         e.preventDefault();
         fetch('http://localhost:3005/users/admin', {
@@ -22,7 +21,7 @@ const MakeAdmin = () => {
         .then(data => {
             // console.log(data);
             if(data.modifiedCount){
-                // console.log(data);
+                console.log(data);
                 setSuccess(true);
             }
         })
@@ -48,7 +47,7 @@ const MakeAdmin = () => {
                 />
                 <Button type='submit' sx={{m:2}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Make Admin</Button>
             </form>
-            {success && <Alert severity="success">Made "{email}" admin successfully!</Alert>}
+            {success && <Alert severity="success">Registration and Login succeeded for "{email}"</Alert>}
         </div>
     );
 };

@@ -22,7 +22,8 @@ const MakeAdmin = () => {
         .then(data => {
             // console.log(data);
             if(data.modifiedCount){
-                // console.log(data);
+                console.log(data);
+                e.target.value = '';
                 setSuccess(true);
             }
         })

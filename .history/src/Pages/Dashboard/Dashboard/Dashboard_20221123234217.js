@@ -55,18 +55,16 @@ function Dashboard(props) {
         to = 'appointment'>
         <Button sx={{mx:3}} color="inherit">Appointment</Button>
       </Link>
-      {admin && <Box>
-        <Link 
-          style={{ textDecoration:'none', color:'black' }}
-          to = 'makeAdmin'>
-          <Button sx={{mx:3}} color="inherit">Make Admin</Button>
-        </Link>
-        <Link 
-          style={{ textDecoration:'none', color:'black' }}
-          to = 'addDoctor'>
-          <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
-        </Link>
-      </Box>}
+      <Link 
+        style={{ textDecoration:'none', color:'black' }}
+        to = 'makeAdmin'>
+        <Button sx={{mx:3}} color="inherit">Make Admin</Button>
+      </Link>
+      <Link 
+        style={{ textDecoration:'none', color:'black' }}
+        to = 'addDoctor'>
+        <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
+      </Link>
 
       <Divider />
       {/* <List>

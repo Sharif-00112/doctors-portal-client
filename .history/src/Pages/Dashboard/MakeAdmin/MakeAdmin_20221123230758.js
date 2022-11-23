@@ -1,14 +1,11 @@
 import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
-import Alert from '@mui/material/Alert';
-
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
 
     const handleAdminSubmit = e =>{
-        setSuccess(false);
         const user = { email };
         e.preventDefault();
         fetch('http://localhost:3005/users/admin', {
@@ -20,11 +17,7 @@ const MakeAdmin = () => {
         })
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
-            if(data.modifiedCount){
-                // console.log(data);
-                setSuccess(true);
-            }
+            console.log(data);
         })
     }
     const handleOnBlur = e =>{
@@ -48,7 +41,6 @@ const MakeAdmin = () => {
                 />
                 <Button type='submit' sx={{m:2}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Make Admin</Button>
             </form>
-            {success && <Alert severity="success">Made "{email}" admin successfully!</Alert>}
         </div>
     );
 };

@@ -22,7 +22,7 @@ const MakeAdmin = () => {
         .then(data => {
             // console.log(data);
             if(data.modifiedCount){
-                // console.log(data);
+                console.log(data);
                 setSuccess(true);
             }
         })

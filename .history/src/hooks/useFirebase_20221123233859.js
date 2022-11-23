@@ -209,10 +209,10 @@ const useFirebase = () =>{
 
     // check Admin
     useEffect( () =>{
-      fetch(`http://localhost:3005/users/${user.email}`)
+      fetch(`http://localhost:3005/users`)
       .then(res => res.json())
       .then(data => setAdmin(data.admin))
-    } ,[user.email])
+    } ,[])
 
     const logout = () =>{
       setIsLoading(true);
@@ -255,7 +255,6 @@ const useFirebase = () =>{
       setUserName,
       logout,
       user, 
-      admin,
       error,
       isLoading
     };
