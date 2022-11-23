@@ -5,19 +5,8 @@ const MakeAdmin = () => {
     const [email, setEmail] = useState('');
 
     const handleAdminSubmit = e =>{
-        const user = { email };
         e.preventDefault();
-        fetch('http://localhost:3005/users/admin', {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+
     }
     const handleOnBlur = e =>{
         setEmail(e.target.value);
