@@ -45,13 +45,13 @@ function Dashboard(props) {
 
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'dashboard'>
-        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
+        to = 'appointment'>
+        <Button sx={{mx:3}} color="inherit">Appointment</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'appointment'>
-        <Button sx={{mx:3}} color="inherit">Appointment</Button>
+        to = 'dashboard'>
+        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}

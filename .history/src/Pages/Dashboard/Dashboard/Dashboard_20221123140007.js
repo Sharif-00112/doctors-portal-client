@@ -45,13 +45,13 @@ function Dashboard(props) {
 
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'dashboard'>
-        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
+        to = 'appointment'>
+        <Button sx={{mx:3}} color="inherit">Appointment</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'appointment'>
-        <Button sx={{mx:3}} color="inherit">Appointment</Button>
+        to = 'dashboard'>
+        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
@@ -154,12 +154,11 @@ function Dashboard(props) {
 
           <Routes>
             <Route path = 'appointment' element={<Appointment/>}/>
-            <Route path = '/' element={<DashboardHome/>}/>
             <Route path = 'dashboard' element={<DashboardHome/>}/>
             <Route path = 'makeAdmin' element={<MakeAdmin/>}/>
             <Route path = 'addDoctor' element={<AddDoctor/>}/>
           </Routes>
-          
+          <DashboardHome></DashboardHome>
       </Box>
     </Box>
   );

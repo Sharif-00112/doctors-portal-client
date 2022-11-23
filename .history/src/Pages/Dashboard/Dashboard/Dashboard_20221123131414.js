@@ -6,33 +6,40 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-// import List from '@mui/material/List';
-// import ListItem from '@mui/material/ListItem';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
-// import MailIcon from '@mui/icons-material/Mail';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+// import Grid from '@mui/material/Unstable_Grid2';
+// import Calendar from '../../Shared/Calendar/Calendar';
+// import Appointments from '../Appointments/Appointments';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+// import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+// import NotFound from '../../NotFound/NotFound';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddDoctor from '../AddDoctor/AddDoctor';
 
 import {
+  // BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
-import Appointment from '../../Appointment/Appointment/Appointment';
  
 const drawerWidth = 220;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  // const [date, setDate] = useState(new Date());
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -45,13 +52,13 @@ function Dashboard(props) {
 
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'dashboard'>
-        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
+        to = 'appointment'>
+        <Button sx={{mx:3}} color="inherit">Appointment</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'appointment'>
-        <Button sx={{mx:3}} color="inherit">Appointment</Button>
+        to = 'dashboard'>
+        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
@@ -64,8 +71,7 @@ function Dashboard(props) {
         <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
       </Link>
 
-      <Divider />
-      {/* <List>
+      <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -76,8 +82,8 @@ function Dashboard(props) {
             </ListItemButton>
           </ListItem>
         ))}
-      </List> */}
-      {/* <Divider /> */}
+      </List>
+      <Divider />
     </div>
   );
 
@@ -153,13 +159,11 @@ function Dashboard(props) {
         <Toolbar />
 
           <Routes>
-            <Route path = 'appointment' element={<Appointment/>}/>
-            <Route path = '/' element={<DashboardHome/>}/>
             <Route path = 'dashboard' element={<DashboardHome/>}/>
             <Route path = 'makeAdmin' element={<MakeAdmin/>}/>
             <Route path = 'addDoctor' element={<AddDoctor/>}/>
           </Routes>
-          
+
       </Box>
     </Box>
   );
