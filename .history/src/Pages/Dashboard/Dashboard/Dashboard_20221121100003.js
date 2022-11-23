@@ -22,17 +22,7 @@ import Typography from '@mui/material/Typography';
 // import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-// import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import NotFound from '../../NotFound/NotFound';
-import DashboardHome from '../DashboardHome/DashboardHome';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import AddDoctor from '../AddDoctor/AddDoctor';
-
-import {
-  // BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
  
 const drawerWidth = 220;
 
@@ -50,24 +40,24 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
 
-      {/* <Link 
+      <Link 
         style={{ textDecoration:'none', color:'black' }}
         to = '/appointment'>
         <Button sx={{mx:3}} color="inherit">Appointment</Button>
-      </Link> */}
+      </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'dashboard'>
+        to = '/dashboard'>
         <Button sx={{mx:3}} color="inherit">Dashboard</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'makeAdmin'>
+        to = '/dashboard/makeAdmin'>
         <Button sx={{mx:3}} color="inherit">Make Admin</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'addDoctor'>
+        to = '/dashboard/addDoctor'>
         <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
       </Link>
 
@@ -178,14 +168,6 @@ function Dashboard(props) {
             </Grid>
           </Box>
         </Typography> */}
-
-        {/* <Router> */}
-          <Routes>
-            <Route path = 'dashboard' element={<DashboardHome/>}/>
-            <Route path = 'makeAdmin' element={<MakeAdmin/>}/>
-            <Route path = 'addDoctor' element={<AddDoctor/>}/>
-          </Routes>
-        {/* </Router> */}
 
       </Box>
     </Box>

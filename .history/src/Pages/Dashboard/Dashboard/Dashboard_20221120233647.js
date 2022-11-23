@@ -1,4 +1,5 @@
-import * as React from 'react';
+// import * as React from 'react';
+import React from "react";
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,30 +17,31 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-// import Grid from '@mui/material/Unstable_Grid2';
-// import Calendar from '../../Shared/Calendar/Calendar';
-// import Appointments from '../Appointments/Appointments';
-// import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
-// import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import NotFound from '../../NotFound/NotFound';
-import DashboardHome from '../DashboardHome/DashboardHome';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import AddDoctor from '../AddDoctor/AddDoctor';
+import { useState } from 'react';
+// import { Link } from 'react-router-dom';
+import { Button, Grid } from '@mui/material';
+import Calendar from "../../Shared/Calendar/Calendar";
+import Appointments from '../Appointments/Appointments';
 
 import {
-  // BrowserRouter as Router,
+  BrowserRouter as Router,
+  // Switch as Routes,
   Routes,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
+import DashboardHome from "../DashboardHome/DashboardHome";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
  
 const drawerWidth = 220;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  // const [date, setDate] = useState(new Date());
+
+  const [date, setDate] = useState(new Date());
+  
+  // let match = useMatch();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -49,28 +51,6 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
-
-      {/* <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = '/appointment'>
-        <Button sx={{mx:3}} color="inherit">Appointment</Button>
-      </Link> */}
-      <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = 'dashboard'>
-        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
-      </Link>
-      <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = 'makeAdmin'>
-        <Button sx={{mx:3}} color="inherit">Make Admin</Button>
-      </Link>
-      <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = 'addDoctor'>
-        <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
-      </Link>
-
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -83,7 +63,19 @@ function Dashboard(props) {
           </ListItem>
         ))}
       </List>
-      <Divider />
+      {/* <Divider /> */}
+      {/* <List>
+        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List> */}
     </div>
   );
 
@@ -119,6 +111,24 @@ function Dashboard(props) {
             <Button sx={{mx:3}} color="inherit">Appointment</Button>
             {/* Appointment */}
           </Link>
+          
+          <Link 
+            style={{ textDecoration:'none', color:'white' }}
+            to={'/'}>
+            <Button sx={{mx:3}} color="inherit">Dashboard</Button>
+          </Link>
+          <Link 
+            style={{ textDecoration:'none', color:'white' }}
+            to={`/makeAdmin`}>
+            <Button sx={{mx:3}} color="inherit">Make Admin</Button>
+          </Link>
+          <Link 
+            style={{ textDecoration:'none', color:'white' }}
+            to={`/addDoctor`}>
+            <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
+          </Link>
+           
+
         </Toolbar>
       </AppBar>
       <Box
@@ -126,6 +136,7 @@ function Dashboard(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer
           container={container}
           variant="temporary"
@@ -158,34 +169,34 @@ function Dashboard(props) {
       >
         <Toolbar />
 
-        {/* <Typography paragraph>
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-              <Grid xs={12} md={5}>
-                <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
-                  Please select your booking date:
-                </Typography>
-                <Calendar
-                  date={date}
-                  setDate={setDate}
-                ></Calendar>
-              </Grid>
-              <Grid xs={12} md={7}>
-                <Appointments
-                  date={date}
-                ></Appointments>
-              </Grid>
-            </Grid>
-          </Box>
-        </Typography> */}
+        <Routes>
+          <Route path={'/dashboard'}>
+            <DashboardHome></DashboardHome>
+          </Route>
+          <Route path={`/makeAdmin`}>
+            <MakeAdmin></MakeAdmin>
+          </Route>
+        </Routes>
 
-        {/* <Router> */}
-          <Routes>
-            <Route path = 'dashboard' element={<DashboardHome/>}/>
-            <Route path = 'makeAdmin' element={<MakeAdmin/>}/>
-            <Route path = 'addDoctor' element={<AddDoctor/>}/>
-          </Routes>
-        {/* </Router> */}
+
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+            <Grid xs={12} md={5}>
+              <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
+                Please select your booking date:
+              </Typography>
+              <Calendar
+                date={date}
+                setDate={setDate}
+              ></Calendar>
+            </Grid>
+            <Grid xs={12} md={7}>
+              <Appointments
+                date={date}
+              ></Appointments>
+            </Grid>
+          </Grid>
+        </Box>
 
       </Box>
     </Box>
@@ -193,6 +204,10 @@ function Dashboard(props) {
 }
 
 Dashboard.propTypes = {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
   window: PropTypes.func,
 };
 

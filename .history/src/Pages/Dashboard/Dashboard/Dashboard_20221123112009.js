@@ -50,11 +50,11 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
 
-      {/* <Link 
+      <Link 
         style={{ textDecoration:'none', color:'black' }}
         to = '/appointment'>
         <Button sx={{mx:3}} color="inherit">Appointment</Button>
-      </Link> */}
+      </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
         to = 'dashboard'>

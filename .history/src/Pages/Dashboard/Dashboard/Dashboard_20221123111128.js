@@ -50,24 +50,24 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
 
-      {/* <Link 
+      <Link 
         style={{ textDecoration:'none', color:'black' }}
         to = '/appointment'>
         <Button sx={{mx:3}} color="inherit">Appointment</Button>
-      </Link> */}
+      </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'dashboard'>
+        to = '/dashboard'>
         <Button sx={{mx:3}} color="inherit">Dashboard</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'makeAdmin'>
+        to = '/makeAdmin'>
         <Button sx={{mx:3}} color="inherit">Make Admin</Button>
       </Link>
       <Link 
         style={{ textDecoration:'none', color:'black' }}
-        to = 'addDoctor'>
+        to = '/addDoctor'>
         <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
       </Link>
 
@@ -181,9 +181,9 @@ function Dashboard(props) {
 
         {/* <Router> */}
           <Routes>
-            <Route path = 'dashboard' element={<DashboardHome/>}/>
-            <Route path = 'makeAdmin' element={<MakeAdmin/>}/>
-            <Route path = 'addDoctor' element={<AddDoctor/>}/>
+            <Route path = '/dashboard' element={<DashboardHome/>}/>
+            <Route path = '/makeAdmin' element={<MakeAdmin/>}/>
+            <Route path = '/addDoctor' element={<AddDoctor/>}/>
           </Routes>
         {/* </Router> */}
 

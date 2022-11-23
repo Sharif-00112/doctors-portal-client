@@ -16,30 +16,19 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-// import Grid from '@mui/material/Unstable_Grid2';
-// import Calendar from '../../Shared/Calendar/Calendar';
-// import Appointments from '../Appointments/Appointments';
-// import { useState } from 'react';
+import Grid from '@mui/material/Unstable_Grid2';
+import Calendar from '../../Shared/Calendar/Calendar';
+import Appointments from '../Appointments/Appointments';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-// import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import NotFound from '../../NotFound/NotFound';
-import DashboardHome from '../DashboardHome/DashboardHome';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import AddDoctor from '../AddDoctor/AddDoctor';
-
-import {
-  // BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
  
 const drawerWidth = 220;
 
 function Dashboard(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  // const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date());
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -49,28 +38,6 @@ function Dashboard(props) {
     <div>
       <Toolbar />
       <Divider />
-
-      {/* <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = '/appointment'>
-        <Button sx={{mx:3}} color="inherit">Appointment</Button>
-      </Link> */}
-      <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = 'dashboard'>
-        <Button sx={{mx:3}} color="inherit">Dashboard</Button>
-      </Link>
-      <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = 'makeAdmin'>
-        <Button sx={{mx:3}} color="inherit">Make Admin</Button>
-      </Link>
-      <Link 
-        style={{ textDecoration:'none', color:'black' }}
-        to = 'addDoctor'>
-        <Button sx={{mx:3}} color="inherit">Add Doctor</Button>
-      </Link>
-
       <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -157,8 +124,7 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-
-        {/* <Typography paragraph>
+        <Typography paragraph>
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Grid xs={12} md={5}>
@@ -177,16 +143,7 @@ function Dashboard(props) {
               </Grid>
             </Grid>
           </Box>
-        </Typography> */}
-
-        {/* <Router> */}
-          <Routes>
-            <Route path = 'dashboard' element={<DashboardHome/>}/>
-            <Route path = 'makeAdmin' element={<MakeAdmin/>}/>
-            <Route path = 'addDoctor' element={<AddDoctor/>}/>
-          </Routes>
-        {/* </Router> */}
-
+        </Typography>
       </Box>
     </Box>
   );

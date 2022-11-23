@@ -25,12 +25,13 @@ function App() {
                 <Appointment></Appointment>
               </PrivateRoute>
             }> </Route>
-            <Route path = 'dashboard/*' element = {
+            <Route path = '/dashboard' element = {
               <PrivateRoute>
                 <Dashboard></Dashboard>
               </PrivateRoute>
             }> </Route>
-            <Route path = '*' element={<NotFound/>}/>
+            {/* <Route exact path = '/appointment' element={<Appointment/>}/> */}
+            <Route exact path = '*' element={<NotFound/>}/>
           </Routes>
           {/* <Footer></Footer> */} 
         </Router>
