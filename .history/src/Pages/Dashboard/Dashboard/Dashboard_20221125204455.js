@@ -43,7 +43,7 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
-      <Toolbar sx={{}} />
+      <Toolbar />
       <Divider />
 
       <Link 
@@ -95,7 +95,7 @@ function Dashboard(props) {
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` }
+          ml: { sm: `${drawerWidth}px` },
         }}
       >
         <Toolbar>

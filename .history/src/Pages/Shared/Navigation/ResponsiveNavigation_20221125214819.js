@@ -109,6 +109,7 @@ const ResponsiveNavigation = () => {
                         <MenuIcon />
                         </IconButton>
                         <Menu
+                        style={{backgroundColor: 'gray'}}
                         id="menu-appbar"
                         anchorEl={anchorElNav}
                         anchorOrigin={{
@@ -127,7 +128,7 @@ const ResponsiveNavigation = () => {
                         }}
                         >
                         {pages.map((page) => (
-                            <MenuItem style={{backgroundColor: 'gray'}} key={page} onClick={handleCloseNavMenu}>
+                            <MenuItem key={page} onClick={handleCloseNavMenu}>
                             <Typography textAlign="center">{page}</Typography>
                             </MenuItem>
                         ))}

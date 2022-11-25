@@ -9,7 +9,7 @@ import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import NotFound from './Pages/NotFound/NotFound';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import ResponsiveNavigation from './Pages/Shared/Navigation/ResponsiveNavigation';
-// import Footer from './Pages/Shared/Footer/Footer';
+import Footer from './Pages/Shared/Footer/Footer';
  
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
             }> </Route>
             <Route path = '*' element={<NotFound/>}/>
           </Routes>
-          {/* <Footer></Footer>  */}
+          <Footer></Footer> 
         </Router>
       </AuthProvider>
     </div>

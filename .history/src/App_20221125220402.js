@@ -30,7 +30,7 @@ function App() {
             }> </Route>
             <Route path = 'dashboard/*' element = {
               <PrivateRoute>
-                <Dashboard></Dashboard>
+                <Dashboard sx={{mt:10}}></Dashboard>
               </PrivateRoute>
             }> </Route>
             <Route path = '*' element={<NotFound/>}/>

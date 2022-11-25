@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTitle } from '../../../hooks/useTitle';
 import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
+import ResponsiveNavigation from '../../Shared/Navigation/ResponsiveNavigation';
 import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
 import Contact from '../Contact/Contact';
@@ -12,6 +14,9 @@ const Home = () => {
 
     return (
         <div>
+            {/* <h2>This is Home</h2> */}
+            {/* <Navigation></Navigation> */}
+            {/* <ResponsiveNavigation></ResponsiveNavigation> */}
             <Banner></Banner>
             <Services></Services>
             <Story></Story>

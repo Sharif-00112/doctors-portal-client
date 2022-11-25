@@ -27,9 +27,16 @@ const pages = [
         <Button sx={{mx:1}} color="inherit">Appointment</Button>
     </Link>,
     <Link 
-        style={{ textDecoration:'none', color:'white' }}
+        style={{ textDecoration:'none' }}
+        to = '/appointment'>
+        Appointment
+    </Link>,
+    <Link 
+        // style={{ textDecoration:'none', color:'white' }}
+        style={{ textDecoration:'none' }}
         to = '/dashboard'>
-        <Button sx={{mx:1}} color="inherit">Dashboard</Button>
+        {/* <Button color="inherit">Appointment</Button> */}
+        Dashboard
     </Link>
 ];
 const settings = [
@@ -123,11 +130,11 @@ const ResponsiveNavigation = () => {
                         open={Boolean(anchorElNav)}
                         onClose={handleCloseNavMenu}
                         sx={{
-                            display: { xs: 'block', md: 'none' }
+                            display: { xs: 'block', md: 'none' },
                         }}
                         >
                         {pages.map((page) => (
-                            <MenuItem style={{backgroundColor: 'gray'}} key={page} onClick={handleCloseNavMenu}>
+                            <MenuItem key={page} onClick={handleCloseNavMenu}>
                             <Typography textAlign="center">{page}</Typography>
                             </MenuItem>
                         ))}

@@ -43,8 +43,8 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
-      <Toolbar sx={{}} />
-      <Divider />
+      {/* <Toolbar /> */}
+      {/* <Divider /> */}
 
       <Link 
         style={{ textDecoration:'none', color:'black' }}
@@ -95,10 +95,10 @@ function Dashboard(props) {
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` }
+          ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        {/* <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -121,7 +121,7 @@ function Dashboard(props) {
             to = '/appointment'>
             <Button sx={{mx:2}} color="inherit">Appointment</Button>
           </Link>
-        </Toolbar>
+        </Toolbar> */}
       </AppBar>
       <Box
         component="nav"

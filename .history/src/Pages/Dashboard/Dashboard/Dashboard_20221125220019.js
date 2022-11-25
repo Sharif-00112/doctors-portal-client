@@ -43,7 +43,7 @@ function Dashboard(props) {
 
   const drawer = (
     <div>
-      <Toolbar sx={{}} />
+      <Toolbar />
       <Divider />
 
       <Link 
@@ -95,7 +95,8 @@ function Dashboard(props) {
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` }
+          ml: { sm: `${drawerWidth}px` },
+          mt:10
         }}
       >
         <Toolbar>
@@ -125,7 +126,7 @@ function Dashboard(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerWidth }, mt:10, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
         <Drawer

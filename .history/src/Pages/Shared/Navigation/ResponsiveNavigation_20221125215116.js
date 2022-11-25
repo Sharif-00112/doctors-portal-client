@@ -97,7 +97,7 @@ const ResponsiveNavigation = () => {
                         Doctors Portal
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ flexGrow: 1, backgroundColor: 'orange', display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                         size="large"
                         aria-label="account of current user"

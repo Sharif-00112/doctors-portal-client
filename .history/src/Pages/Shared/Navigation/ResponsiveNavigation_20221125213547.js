@@ -17,7 +17,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const pages = [
     <Link 
-        style={{ textDecoration:'none', color:'white' }}
+        style={{ textDecoration:'none', color:'gray' }}
         to = '/home'>
         <Button sx={{mx:1}} color="inherit">Home</Button>
     </Link>,
@@ -127,8 +127,8 @@ const ResponsiveNavigation = () => {
                         }}
                         >
                         {pages.map((page) => (
-                            <MenuItem style={{backgroundColor: 'gray'}} key={page} onClick={handleCloseNavMenu}>
-                            <Typography textAlign="center">{page}</Typography>
+                            <MenuItem key={page} onClick={handleCloseNavMenu}>
+                            <Typography sx={{color:'black'}} textAlign="center">{page}</Typography>
                             </MenuItem>
                         ))}
                         </Menu>

@@ -1,5 +1,7 @@
 import React from 'react';
 // import dayjs from 'dayjs';
+import Navigation from '../../Shared/Navigation/Navigation';
+import ResponsiveNavigation from '../../Shared/Navigation/ResponsiveNavigation';
 import AppointmentHeader from '../AppointmentHeader/AppointmentHeader';
 import AvailableAppointments from '../AvailableAppointments/AvailableAppointments';
 
