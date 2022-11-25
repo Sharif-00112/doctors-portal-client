@@ -163,7 +163,6 @@ function Dashboard(props) {
             <Route path = 'dashboard' element={<DashboardHome/>}/>
             {/* <Route path = 'makeAdmin' element={<MakeAdmin/>}/> */}
             {/* <Route path = 'addDoctor' element={<AddDoctor/>}/> */}
-            {/* way-1 to secure route through AdminRoute  */}
             <Route path = 'makeAdmin' element = {
               <AdminRoute>
                 <MakeAdmin></MakeAdmin>

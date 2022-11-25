@@ -13,7 +13,6 @@ const useFirebase = () =>{
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
-    const [token, setToken] = useState('');
 
     const googleProvider = new GoogleAuthProvider();
     // const gitProvider = new GithubAuthProvider();
@@ -199,13 +198,6 @@ const useFirebase = () =>{
             if (user) {
               // User is signed in
               setUser(user);
-
-              //JWT
-              getIdToken(user)
-              // .then(idToken => console.log(idToken))
-              // .then(idToken => localStorage.setItem('idToken', idToken))
-              .then(idToken => setToken(idToken))
-
             } else {
               // User is signed out
               setUser({});
@@ -265,8 +257,7 @@ const useFirebase = () =>{
       user, 
       admin,
       error,
-      isLoading,
-      token
+      isLoading
     };
 }
 

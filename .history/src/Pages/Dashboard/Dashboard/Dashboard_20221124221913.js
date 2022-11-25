@@ -162,16 +162,11 @@ function Dashboard(props) {
             <Route path = '/' element={<DashboardHome/>}/>
             <Route path = 'dashboard' element={<DashboardHome/>}/>
             {/* <Route path = 'makeAdmin' element={<MakeAdmin/>}/> */}
-            {/* <Route path = 'addDoctor' element={<AddDoctor/>}/> */}
-            {/* way-1 to secure route through AdminRoute  */}
+            <Route path = 'addDoctor' element={<AddDoctor/>}/>
+
             <Route path = 'makeAdmin' element = {
               <AdminRoute>
                 <MakeAdmin></MakeAdmin>
-              </AdminRoute>
-            }> </Route>
-            <Route path = 'addDoctor' element = {
-              <AdminRoute>
-                <AddDoctor></AddDoctor>
               </AdminRoute>
             }> </Route>
           </Routes>

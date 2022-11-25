@@ -203,8 +203,7 @@ const useFirebase = () =>{
               //JWT
               getIdToken(user)
               // .then(idToken => console.log(idToken))
-              // .then(idToken => localStorage.setItem('idToken', idToken))
-              .then(idToken => setToken(idToken))
+              .then(idToken => localStorage.setItem('idToken', idToken))
 
             } else {
               // User is signed out
@@ -265,8 +264,7 @@ const useFirebase = () =>{
       user, 
       admin,
       error,
-      isLoading,
-      token
+      isLoading
     };
 }
 

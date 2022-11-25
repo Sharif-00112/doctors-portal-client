@@ -265,8 +265,7 @@ const useFirebase = () =>{
       user, 
       admin,
       error,
-      isLoading,
-      token
+      isLoading
     };
 }
 
