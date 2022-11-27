@@ -209,7 +209,7 @@ const useFirebase = () =>{
 
     // check Admin
     useEffect( () =>{
-      fetch(`http://localhost:3005/users`)
+      fetch(`https://vast-brushlands-50966.herokuapp.com/users`)
       .then(res => res.json())
       .then(data => setAdmin(data.admin))
     } ,[])
@@ -229,7 +229,7 @@ const useFirebase = () =>{
 
     const saveUserToDB = (email, displayName, method) =>{
       const user = {email, displayName};
-      fetch('http://localhost:3005/users', {
+      fetch('https://vast-brushlands-50966.herokuapp.com/users', {
           method: method,
           headers: {
               'content-type' : 'application/json'

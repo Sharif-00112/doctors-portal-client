@@ -221,7 +221,7 @@ const useFirebase = () =>{
 
     const saveUserToDB = (email, displayName) =>{
       const user = {email, displayName};
-      fetch('http://localhost:3005/users', {
+      fetch('https://vast-brushlands-50966.herokuapp.com/users', {
           method: 'POST',
           headers: {
               'content-type' : 'application/json'
