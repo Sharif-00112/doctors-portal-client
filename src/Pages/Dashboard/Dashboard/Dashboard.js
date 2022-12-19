@@ -23,7 +23,7 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddDoctor from '../AddDoctor/AddDoctor';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
-import {
+import { 
   Routes,
   Route
 } from "react-router-dom";

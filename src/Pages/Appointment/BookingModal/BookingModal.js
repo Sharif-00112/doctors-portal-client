@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import {Button} from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 
-
+  
 const style = {
     position: 'absolute',
     top: '50%',
@@ -22,7 +22,7 @@ const style = {
 };
 
 const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBookingSuccess }) => {
-    const { name, time } = booking;
+    const { name, time, price } = booking;
     const { user } = useAuth();
     const initialInfo = {
         patientName: user.displayName,
@@ -48,6 +48,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
             ...bookingInfo,
             serviceName: name,
             time,
+            price,
             date: date.toLocaleDateString(),
             bookingPlacementTime: new Date()
         }

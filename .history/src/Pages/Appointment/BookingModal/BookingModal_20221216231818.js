@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -6,8 +6,9 @@ import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import {Button} from '@mui/material';
+import useAuth from '../../../hooks/useAuth';
 
-
+  
 const style = {
     position: 'absolute',
     top: '50%',
@@ -20,12 +21,57 @@ const style = {
     p: 4,
 };
 
-const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
-    const { id, name, time, space } = booking
+const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBookingSuccess }) => {
+    const { name, time, price } = booking;
+    const { user } = useAuth();
+    const initialInfo = {
+        patientName: user.displayName,
+        email: user.email,
+        phone: ''
+    };
+    const [bookingInfo, setBookingInfo] = useState(initialInfo);
+
+    const handleOnBlur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newInfo = {...bookingInfo};
+        newInfo[field] = value;
+        // console.log(newInfo);
+        setBookingInfo(newInfo);
+    }
 
     const handleBookingSubmit = e =>{
         e.preventDefault();
-        alert('Appointment Submitted')
+
+        //collect form data and other info 
+        const appointment = {
+            ...bookingInfo,
+            serviceName: name,
+            time,
+            price,
+            date: date.toLocaleDateString(),
+            bookingPlacementTime: new Date()
+        }
+        // console.log(appointment);
+
+        //send data to the server and database
+        fetch('http://localhost:3005/appointments', {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(appointment)
+        })
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data);
+            if(data.insertedId){
+                alert('Appointment Submitted Successfully!');
+                setBookingSuccess(true);
+                handleBookingClose();
+            }
+        })
+        // alert('Appointment Submitted');
     }
 
     return (
@@ -43,12 +89,13 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
             >
                 <Fade in={openBooking}>
                     <Box sx={style}>
-                            <Typography sx={{ mb:3, fontSize: 20, fontWeight: 600, color: '#5CE7ED'}} variant='h6' gutterBottom component='div'>
+                            <Typography style={{ textAlign: 'center'}} sx={{ mb:3, fontSize: 20, fontWeight: 600, color: '#5CE7ED'}} variant='h6' gutterBottom component='div'>
                                 {name}
                             </Typography>
                         <form onSubmit={handleBookingSubmit}>
                         <TextField
                             disabled
+                            label="Date"
                             sx={{width: "90%", m:1 }}
                             id="outlined-size-small"
                             defaultValue={date.toDateString()}
@@ -56,6 +103,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             disabled
+                            label="Time Slot"
                             sx={{width: "90%", m:1 }}
                             id="outlined-size-small"
                             defaultValue={time}
@@ -63,20 +111,35 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date }) => {
                             />
                         <TextField
                             sx={{width: "90%", m:1 }}
+                            required
+                            label="Full Name"
                             id="outlined-size-small"
-                            defaultValue='Your Name'
+                            placeholder='Your Name'
+                            name='patientName'
+                            defaultValue={user.displayName}
+                            onBlur={handleOnBlur}
                             size="small"
                             />
                         <TextField
                             sx={{width: "90%", m:1 }}
+                            // required
+                            label="Email Address"
                             id="outlined-size-small"
-                            defaultValue='Your Email'
+                            placeholder='Your Email'
+                            name='email'
+                            defaultValue={user.email}
+                            onBlur={handleOnBlur}
                             size="small"
                             />
                         <TextField
                             sx={{width: "90%", m:1 }}
+                            required
+                            label="Phone"
                             id="outlined-size-small"
-                            defaultValue='Phone Number'
+                            placeholder='Phone Number'
+                            name='phone'
+                            // defaultValue='+880'
+                            onBlur={handleOnBlur}
                             size="small"
                             />
                         <Button type='submit' sx={{m:1}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Submit</Button>

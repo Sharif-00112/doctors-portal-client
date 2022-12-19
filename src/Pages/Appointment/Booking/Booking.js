@@ -4,10 +4,10 @@ import Typography from '@mui/material/Typography';
 import {Button} from '@mui/material';
 import BookingModal from '../BookingModal/BookingModal';
 
-
-
+ 
+ 
 const Booking = ({ booking, date, setBookingSuccess }) => {
-    const { name, time, space } = booking
+    const { name, time, space, price } = booking
 
     const [openBooking, setOpenBooking] = React.useState(false);
     const handleBookingOpen = () => setOpenBooking(true);
@@ -24,6 +24,9 @@ const Booking = ({ booking, date, setBookingSuccess }) => {
                 </Typography>
                 <Typography sx={{fontSize: 12, fontWeight: 500, color: 'gray'}} variant='caption' display='block' gutterBottom>
                     {space} slots available
+                </Typography>
+                <Typography sx={{fontSize: 12, fontWeight: 500, color: 'gray'}} variant='caption' display='block' gutterBottom>
+                    Price ${price}
                 </Typography>
                 <Button onClick={handleBookingOpen} sx={{mt:1}} variant="contained" style={{backgroundColor: '#5CE7ED'}}>Book Appointment</Button>
             </Paper>
