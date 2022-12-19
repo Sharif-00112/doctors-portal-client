@@ -1,6 +1,6 @@
 import { useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.initialize";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updatePassword, sendEmailVerification, updateProfile, } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updatePassword, sendEmailVerification, updateProfile, getIdToken } from "firebase/auth";
 import { useEffect } from "react";
   
 initializeAuthentication(); 
@@ -12,6 +12,8 @@ const useFirebase = () =>{
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
+    const [token, setToken] = useState('');
 
     const googleProvider = new GoogleAuthProvider();
     // const gitProvider = new GithubAuthProvider();
@@ -27,6 +29,8 @@ const useFirebase = () =>{
           // const token = credential.accessToken;
           // The signed-in user info.
           setUser(result.user);
+          // save user to the database
+          saveUserToDB(result.user.email, result.user.displayName, 'PUT');
       }).catch((error) => {
           // Handle Errors here.
           setError(error.code);
@@ -38,13 +42,16 @@ const useFirebase = () =>{
       }).finally(() =>{
         setIsLoading(false);
       });
-    }
+    };
 
     const signInUsingFacebook = () =>{
+      setIsLoading(true);
       signInWithPopup(auth, facebookProvider)
       .then((result) => {
         // The signed-in user info.
         setUser(result.user);
+        // save user to the database
+        saveUserToDB(result.user.email, result.user.displayName, 'PUT');
 
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         // const credential = FacebookAuthProvider.credentialFromResult(result);
@@ -58,6 +65,8 @@ const useFirebase = () =>{
         setError(error.customData.email);
         // The AuthCredential type that was used.
         setError(FacebookAuthProvider.credentialFromError(error));
+      }).finally(() =>{
+        setIsLoading(false);
       });
     };
 
@@ -67,6 +76,7 @@ const useFirebase = () =>{
       .then((userCredential) => {
         // Signed in 
         setUser(userCredential.user);
+        setError('');
       })
       .catch((error) => {
         setError(error.code);
@@ -82,6 +92,10 @@ const useFirebase = () =>{
         // Signed in 
         // const user = userCredential.user;
         // console.log(user);
+        setUser(userCredential.user);
+        // save user to the database
+        saveUserToDB(userCredential.user.email, userCredential.user.displayName, 'POST')
+        // clear error message
         setError('');
       })
       .catch((error) => {
@@ -185,6 +199,13 @@ const useFirebase = () =>{
             if (user) {
               // User is signed in
               setUser(user);
+
+              //JWT
+              getIdToken(user)
+              // .then(idToken => console.log(idToken))
+              // .then(idToken => localStorage.setItem('idToken', idToken))
+              .then(idToken => setToken(idToken))
+
             } else {
               // User is signed out
               setUser({});
@@ -193,6 +214,13 @@ const useFirebase = () =>{
           });
           return () => unsubscribe;
     },[auth]);
+
+    // check Admin
+    useEffect( () =>{
+      fetch(`http://localhost:3005/users/${user.email}`)
+      .then(res => res.json())
+      .then(data => setAdmin(data.admin))
+    } ,[user.email])
 
     const logout = () =>{
       setIsLoading(true);
@@ -205,6 +233,18 @@ const useFirebase = () =>{
         }).finally(()=>{
           setIsLoading(false);
         });
+    }
+
+    const saveUserToDB = (email, displayName, method) =>{
+      const user = {email, displayName};
+      fetch('http://localhost:3005/users', {
+          method: method,
+          headers: {
+              'content-type' : 'application/json'
+          },
+          body: JSON.stringify(user)
+      })
+      .then()
     }
 
     return {
@@ -223,8 +263,10 @@ const useFirebase = () =>{
       setUserName,
       logout,
       user, 
+      admin,
       error,
-      isLoading
+      isLoading,
+      token
     };
 }
 

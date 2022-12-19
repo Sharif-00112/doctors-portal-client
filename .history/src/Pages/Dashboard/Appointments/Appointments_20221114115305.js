@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -10,41 +10,30 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Link } from 'react-router-dom';
 
 const Appointments = ({date}) => {
-    const { user, token } = useAuth();
+    const { user } = useAuth();
     const [appointments, setAppointments] = useState([]);
 
     useEffect( () =>{
-<<<<<<< HEAD:.history/src/Pages/Dashboard/Appointments/Appointments_20221219222935.js
-        const url = `http://localhost:3005/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
-        fetch(url, {
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        })
-=======
         const url = `http://localhost:3005/appointments?email=${user.email}&date=${date}`
         fetch(url)
->>>>>>> 219324afd96d4260fff4c888bcbe1d69789d7afa:.history/src/Pages/Dashboard/Appointments/Appointments_20221114121840.js
         .then(res => res.json())
         .then(data => setAppointments(data))
-    },[user.email, date, token])
+    },[user.email, date])
 
     return (
         <div>
-            <Typography sx={{ fontWeight: 600, my:3 }} variant="h6" component="div">
-                Appointments on - {date.toDateString()}: {appointments.length}
+            <Typography sx={{ fontWeight: 600 }} variant="h4" component="div">
+                Appointments: {appointments.length}
             </Typography>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 550 }} aria-label="Appointments table">
+                <Table sx={{ minWidth: 500 }} aria-label="Appointments table">
                     <TableHead>
                     <TableRow>
                         <TableCell>Patient Name</TableCell>
-                        <TableCell align="center">Service</TableCell>
                         <TableCell align="center">Date</TableCell>
-                        <TableCell align="center">Time</TableCell>
+                        <TableCell align="center">Appointment Slot</TableCell>
                         {/* <TableCell align="center">Payment Status</TableCell> */}
                         <TableCell align="right">Action</TableCell>
                         {/* <TableCell align="right">Protein&nbsp;(g)</TableCell> */}
@@ -59,14 +48,10 @@ const Appointments = ({date}) => {
                         <TableCell component="th" scope="row">
                             {row.patientName}
                         </TableCell>
-                        <TableCell align="center">{row.serviceName}</TableCell>
                         <TableCell align="center">{row.date}</TableCell>
                         <TableCell align="center">{row.time}</TableCell>
                         {/* <TableCell align="right">Unpaid</TableCell> */}
-                        <TableCell align="right">{row.payment ? 
-                            'Paid' :
-                            <Link to={`payment:${row._id}`}><Button>Pay</Button></Link>
-                        }</TableCell>
+                        <TableCell align="right">{ }</TableCell>
                         {/* <TableCell align="right">{row.protein}</TableCell> */}
                         </TableRow>
                     ))}

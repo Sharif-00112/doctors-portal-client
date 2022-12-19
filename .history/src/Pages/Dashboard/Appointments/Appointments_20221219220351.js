@@ -17,12 +17,17 @@ const Appointments = ({date}) => {
     const [appointments, setAppointments] = useState([]);
 
     useEffect( () =>{
+<<<<<<< HEAD:.history/src/Pages/Dashboard/Appointments/Appointments_20221219220351.js
         const url = `http://localhost:3005/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
             }
         })
+=======
+        const url = `http://localhost:3005/appointments?email=${user.email}&date=${date}`
+        fetch(url)
+>>>>>>> 219324afd96d4260fff4c888bcbe1d69789d7afa:.history/src/Pages/Dashboard/Appointments/Appointments_20221114122105.js
         .then(res => res.json())
         .then(data => setAppointments(data))
     },[user.email, date, token])

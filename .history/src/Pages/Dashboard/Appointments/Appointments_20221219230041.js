@@ -17,17 +17,12 @@ const Appointments = ({date}) => {
     const [appointments, setAppointments] = useState([]);
 
     useEffect( () =>{
-<<<<<<< HEAD:.history/src/Pages/Dashboard/Appointments/Appointments_20221219222935.js
         const url = `http://localhost:3005/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
             }
         })
-=======
-        const url = `http://localhost:3005/appointments?email=${user.email}&date=${date}`
-        fetch(url)
->>>>>>> 219324afd96d4260fff4c888bcbe1d69789d7afa:.history/src/Pages/Dashboard/Appointments/Appointments_20221114121840.js
         .then(res => res.json())
         .then(data => setAppointments(data))
     },[user.email, date, token])
@@ -65,7 +60,7 @@ const Appointments = ({date}) => {
                         {/* <TableCell align="right">Unpaid</TableCell> */}
                         <TableCell align="right">{row.payment ? 
                             'Paid' :
-                            <Link to={`payment:${row._id}`}><Button>Pay</Button></Link>
+                            <Link to={`payment/:${row._id}`}><Button>Pay</Button></Link>
                         }</TableCell>
                         {/* <TableCell align="right">{row.protein}</TableCell> */}
                         </TableRow>
