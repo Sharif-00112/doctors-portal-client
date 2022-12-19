@@ -60,7 +60,7 @@ const Appointments = ({date}) => {
                         {/* <TableCell align="right">Unpaid</TableCell> */}
                         <TableCell align="right">{row.payment ? 
                             'Paid' :
-                            <Link to={`payment/:${row._id}`}><Button>Pay</Button></Link>
+                            <Link to={`payment:${row._id}`}><Button>Pay</Button></Link>
                         }</TableCell>
                         {/* <TableCell align="right">{row.protein}</TableCell> */}
                         </TableRow>
