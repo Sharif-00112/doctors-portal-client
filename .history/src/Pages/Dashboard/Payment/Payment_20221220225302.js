@@ -17,10 +17,7 @@ const Payment = () => {
     return (
         <div>
             <Typography sx={{ fontWeight: 600, mb:2 }} variant="h5" component="div">
-                Payment for- <br />
-                Patient: {appointment.patientName} <br />
-                Service: {appointment.serviceName} <br />
-                Date: {appointment.date}
+                Payment for: {appointmentId}
             </Typography>
             <Typography sx={{ fontWeight: 600, mb:2 }} variant="h6" component="div">
                 Please pay: ${appointment.price}
