@@ -5,24 +5,18 @@ import { useParams } from 'react-router-dom';
 
 const Payment = () => {
     const {appointmentId} = useParams();
-    const [appointment, setAppointment] = useState([]);
+    // const [appointment, setAppointment] = useState([]);
     const url = `http://localhost:3005/appointments/${appointmentId}`
-    // console.log(appointmentId);
-    // console.log(url);
+    console.log(url);
 
-    useEffect( () => {
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setAppointment(data))
-    }, [url])
+    // useEffect( () => {
+    //     fetch()
+    // }, [])
 
     return (
         <div>
             <Typography sx={{ fontWeight: 600, mb:2 }} variant="h6" component="div">
-                Payment for: {appointmentId}
-            </Typography>
-            <Typography sx={{ fontWeight: 600, mb:2 }} variant="h6" component="div">
-                Please pay: ${appointment.price}
+                Please pay for: {appointmentId}
             </Typography>
         </div>
     );
