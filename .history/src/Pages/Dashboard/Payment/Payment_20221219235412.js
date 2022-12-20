@@ -9,7 +9,7 @@ const Payment = () => {
     useEffect( () =>{
         fetch(`http://localhost:3005/appointments/${appointmentId}`)
         .then(res => res.json())
-        .then(data => console.log(data));
+        .then(data => setAppointment(data));
     }, [appointmentId])
     return (
         <div>
