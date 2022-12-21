@@ -28,14 +28,12 @@ const Payment = () => {
                 Service: {appointment.serviceName} <br />
                 Date: {appointment.date}
             </Typography>
-            <Typography sx={{ fontWeight: 600, mb:5 }} variant="h6" component="div">
+            <Typography sx={{ fontWeight: 600, mb:2 }} variant="h6" component="div">
                 Please pay: ${appointment.price}
             </Typography>
 
             <Elements stripe={stripePromise}>
-                <CheckoutForm
-                    appointment={appointment}
-                />
+                <CheckoutForm />
             </Elements>
         </div>
     );
