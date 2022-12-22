@@ -92,23 +92,8 @@ const CheckoutForm = ({ appointment }) => {
             setProcessing(false);
 
             //save to database
-            const payment = {
-                amount: paymentIntent.amount,
-                created: paymentIntent.created,
-                last4: paymentMethod.card.last4,
-                transaction: paymentIntent.client_secret
-            }
             const url = `http://localhost:3005/appointments/${_id}`
-            // console.log(url);
-            fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(payment)
-            })
-            .then(res => res.json())
-            .then(data => console.log(data))
+            console.log(url)
         }
     };
 
@@ -135,7 +120,7 @@ const CheckoutForm = ({ appointment }) => {
                 {
                     processing ? <CircularProgress></CircularProgress>
                     :
-                    <button type="submit" disabled={!stripe || success}>
+                    <button type="submit" disabled={!stripe}>
                         Pay ${price}
                     </button>
                 }

@@ -96,7 +96,7 @@ const CheckoutForm = ({ appointment }) => {
                 amount: paymentIntent.amount,
                 created: paymentIntent.created,
                 last4: paymentMethod.card.last4,
-                transaction: paymentIntent.client_secret
+                transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
             const url = `http://localhost:3005/appointments/${_id}`
             // console.log(url);
@@ -135,7 +135,7 @@ const CheckoutForm = ({ appointment }) => {
                 {
                     processing ? <CircularProgress></CircularProgress>
                     :
-                    <button type="submit" disabled={!stripe || success}>
+                    <button type="submit" disabled={!stripe}>
                         Pay ${price}
                     </button>
                 }
