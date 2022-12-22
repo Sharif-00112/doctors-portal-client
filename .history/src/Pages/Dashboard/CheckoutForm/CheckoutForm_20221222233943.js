@@ -29,7 +29,7 @@ const CheckoutForm = ({ appointment }) => {
         // .then(data => console.log(data))
         .then(data => setClientSecret(data.clientSecret))
     },[price])   
-    // console.log(clientSecret)  
+    console.log(clientSecret)  
 
     const stripe = useStripe();
     const elements = useElements();

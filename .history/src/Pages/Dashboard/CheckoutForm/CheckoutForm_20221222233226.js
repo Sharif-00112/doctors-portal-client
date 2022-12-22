@@ -1,4 +1,4 @@
-import { Alert, CircularProgress } from '@mui/material';
+import { Alert } from '@mui/material';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
@@ -51,7 +51,7 @@ const CheckoutForm = ({ appointment }) => {
         if (card == null) {
             return;
         }
-        setProcessing(true);
+
         // Use your card Element with other Stripe.js APIs
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
@@ -89,7 +89,6 @@ const CheckoutForm = ({ appointment }) => {
             setError('');
             console.log(paymentIntent);
             setSuccess('Your payment proceed successfully');
-            setProcessing(false);
         }
     };
 
@@ -113,13 +112,9 @@ const CheckoutForm = ({ appointment }) => {
                     },
                     }}
                 />
-                {
-                    processing ? <CircularProgress></CircularProgress>
-                    :
-                    <button type="submit" disabled={!stripe}>
-                        Pay ${price}
-                    </button>
-                }
+                <button type="submit" disabled={!stripe}>
+                    Pay ${price}
+                </button>
             </form>
             {
                 error && <Alert sx={{my:3}} severity="error">{error}</Alert>

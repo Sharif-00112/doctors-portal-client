@@ -1,4 +1,4 @@
-import { Alert, CircularProgress } from '@mui/material';
+import { Alert } from '@mui/material';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
@@ -13,8 +13,6 @@ const CheckoutForm = ({ appointment }) => {
 
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState();
-    const [success, setSuccess] = useState('');
-    const [processing, setProcessing] = useState(false);
 
     useEffect( () =>{
         fetch('http://localhost:3005/create-payment-intent', {
@@ -51,7 +49,7 @@ const CheckoutForm = ({ appointment }) => {
         if (card == null) {
             return;
         }
-        setProcessing(true);
+
         // Use your card Element with other Stripe.js APIs
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
@@ -61,7 +59,6 @@ const CheckoutForm = ({ appointment }) => {
         if (error) {
             console.log('[error]', error);
             setError(error.message);
-            setSuccess('');
         } else {
             console.log('[PaymentMethod]', paymentMethod);
             setError('');
@@ -83,13 +80,10 @@ const CheckoutForm = ({ appointment }) => {
 
         if(intentError){
             setError(intentError.message);
-            setSuccess('');
         }
         else{
             setError('');
             console.log(paymentIntent);
-            setSuccess('Your payment proceed successfully');
-            setProcessing(false);
         }
     };
 
@@ -113,19 +107,12 @@ const CheckoutForm = ({ appointment }) => {
                     },
                     }}
                 />
-                {
-                    processing ? <CircularProgress></CircularProgress>
-                    :
-                    <button type="submit" disabled={!stripe}>
-                        Pay ${price}
-                    </button>
-                }
+                <button type="submit" disabled={!stripe}>
+                    Pay ${price}
+                </button>
             </form>
             {
                 error && <Alert sx={{my:3}} severity="error">{error}</Alert>
-            }
-            {
-                success && <Alert sx={{my:3}} severity="success">{success}</Alert>
             }
         </div>
     );

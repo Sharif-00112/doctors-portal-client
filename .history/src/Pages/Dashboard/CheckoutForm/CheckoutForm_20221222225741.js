@@ -1,20 +1,16 @@
-import { Alert, CircularProgress } from '@mui/material';
+import { Alert } from '@mui/material';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import useAuth from '../../../hooks/useAuth'
 
 // https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/0-Card-Minimal.js
 
 const CheckoutForm = ({ appointment }) => {
-    const {price, patientName} = appointment;
-    const {user} = useAuth();
+    const {price} = appointment;
     // console.log(price);
 
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState();
-    const [success, setSuccess] = useState('');
-    const [processing, setProcessing] = useState(false);
 
     useEffect( () =>{
         fetch('http://localhost:3005/create-payment-intent', {
@@ -26,10 +22,10 @@ const CheckoutForm = ({ appointment }) => {
             //use price dynamically. i've used 999 to avoid error
         })
         .then(res => res.json())
-        // .then(data => console.log(data))
-        .then(data => setClientSecret(data.clientSecret))
-    },[price])   
-    // console.log(clientSecret)  
+        .then(data => console.log(data))
+        .then(data => setClientSecret(data))
+    },[price])
+    // console.log(clientSecret)
 
     const stripe = useStripe();
     const elements = useElements();
@@ -51,7 +47,7 @@ const CheckoutForm = ({ appointment }) => {
         if (card == null) {
             return;
         }
-        setProcessing(true);
+
         // Use your card Element with other Stripe.js APIs
         const {error, paymentMethod} = await stripe.createPaymentMethod({
             type: 'card',
@@ -61,35 +57,9 @@ const CheckoutForm = ({ appointment }) => {
         if (error) {
             console.log('[error]', error);
             setError(error.message);
-            setSuccess('');
         } else {
             console.log('[PaymentMethod]', paymentMethod);
             setError('');
-        }
-
-        // payment intent
-        const {paymentIntent, error: intentError} = await stripe.confirmCardPayment(
-            clientSecret,
-            {
-              payment_method: {
-                card: card,
-                billing_details: {
-                  name: patientName,
-                  email: user.email
-                },
-              },
-            },
-        );
-
-        if(intentError){
-            setError(intentError.message);
-            setSuccess('');
-        }
-        else{
-            setError('');
-            console.log(paymentIntent);
-            setSuccess('Your payment proceed successfully');
-            setProcessing(false);
         }
     };
 
@@ -113,19 +83,12 @@ const CheckoutForm = ({ appointment }) => {
                     },
                     }}
                 />
-                {
-                    processing ? <CircularProgress></CircularProgress>
-                    :
-                    <button type="submit" disabled={!stripe}>
-                        Pay ${price}
-                    </button>
-                }
+                <button type="submit" disabled={!stripe}>
+                    Pay ${price}
+                </button>
             </form>
             {
                 error && <Alert sx={{my:3}} severity="error">{error}</Alert>
-            }
-            {
-                success && <Alert sx={{my:3}} severity="success">{success}</Alert>
             }
         </div>
     );
