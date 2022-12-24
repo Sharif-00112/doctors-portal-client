@@ -6,37 +6,10 @@ const AddDoctor = () => {
     const [email, setEmail] = useState('');
     const [image, setImage] = useState(null);
 
-    const handleSubmit = e =>{
-        e.preventDefault();
-        if(!image){
-            alert('Please add a Profile Image')
-            return;
-        }
-        // sending data to database is a bit different here
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('image', image);
-
-        fetch('http://localhost:3005/doctors', {
-            method: 'POST',
-            body: formData
-        })
-        .then((response) => response.json())
-        .then((result) => {
-            if(result.insertedId){
-                alert('Doctor added successfully!')
-            }
-        })  
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    }
-
     return (
         <div>
             <h2>Add Doctors</h2>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <TextField 
                 sx={{width: '50%'}}
                 id="" 
@@ -57,7 +30,7 @@ const AddDoctor = () => {
                 <Input 
                 accept="image/*" 
                 type="file" 
-                onChange={e => setImage(e.target.files[0])}/>
+                onChange={e => console.log(e.target.files)}/>
                 <br /><br />
                 <Button variant="contained" type='submit'>
                     Add Doctor

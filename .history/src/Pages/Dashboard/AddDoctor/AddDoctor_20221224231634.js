@@ -12,25 +12,6 @@ const AddDoctor = () => {
             alert('Please add a Profile Image')
             return;
         }
-        // sending data to database is a bit different here
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('image', image);
-
-        fetch('http://localhost:3005/doctors', {
-            method: 'POST',
-            body: formData
-        })
-        .then((response) => response.json())
-        .then((result) => {
-            if(result.insertedId){
-                alert('Doctor added successfully!')
-            }
-        })  
-        .catch((error) => {
-            console.error('Error:', error);
-        });
     }
 
     return (

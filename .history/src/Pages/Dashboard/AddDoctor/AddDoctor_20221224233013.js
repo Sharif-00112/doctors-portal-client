@@ -18,15 +18,13 @@ const AddDoctor = () => {
         formData.append('email', email);
         formData.append('image', image);
 
-        fetch('http://localhost:3005/doctors', {
+        fetch('http://localhost:3005/', {
             method: 'POST',
             body: formData
         })
         .then((response) => response.json())
         .then((result) => {
-            if(result.insertedId){
-                alert('Doctor added successfully!')
-            }
+            console.log('Success:', result);
         })  
         .catch((error) => {
             console.error('Error:', error);
