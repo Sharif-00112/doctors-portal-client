@@ -4,6 +4,7 @@ import Footer from '../../Shared/Footer/Footer';
 import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
 import Contact from '../Contact/Contact';
+import Doctors from '../Doctors/Doctors';
 import Services from '../Services/Services';
 import Story from '../Story/Story';
 
@@ -16,6 +17,7 @@ const Home = () => {
             <Services></Services>
             <Story></Story>
             <AppointmentBanner></AppointmentBanner>
+            <Doctors></Doctors>
             <Contact></Contact>
             <Footer></Footer>
         </div>

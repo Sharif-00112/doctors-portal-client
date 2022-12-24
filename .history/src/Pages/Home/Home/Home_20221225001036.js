@@ -1,17 +1,25 @@
 import React from 'react';
-import Navigation from '../../Shared/Navigation/Navigation';
+import { useTitle } from '../../../hooks/useTitle';
+import Footer from '../../Shared/Footer/Footer';
 import AppointmentBanner from '../AppointmentBanner/AppointmentBanner';
 import Banner from '../Banner/Banner';
+import Contact from '../Contact/Contact';
+import Doctors from '../Doctors/Doctors';
 import Services from '../Services/Services';
+import Story from '../Story/Story';
 
 const Home = () => {
+    useTitle("Home");
+
     return (
         <div>
-            {/* <h2>This is Home</h2> */}
-            <Navigation></Navigation>
             <Banner></Banner>
             <Services></Services>
+            <Story></Story>
             <AppointmentBanner></AppointmentBanner>
+            <Doctors></Doctors>
+            <Contact></Contact>
+            <Footer></Footer>
         </div>
     );
 };
