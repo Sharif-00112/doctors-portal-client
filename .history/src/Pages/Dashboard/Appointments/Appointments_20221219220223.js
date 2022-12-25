@@ -18,14 +18,14 @@ const Appointments = ({date}) => {
 
     useEffect( () =>{
 <<<<<<< HEAD:.history/src/Pages/Dashboard/Appointments/Appointments_20221219220223.js
-        const url = `http://localhost:3005/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
+        const url = `https://doctors-portal-372608.et.r.appspot.com/appointments?email=${user.email}&date=${date.toLocaleDateString()}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
             }
         })
 =======
-        const url = `http://localhost:3005/appointments?email=${user.email}&date=${date}`
+        const url = `https://doctors-portal-372608.et.r.appspot.com/appointments?email=${user.email}&date=${date}`
         fetch(url)
 >>>>>>> 219324afd96d4260fff4c888bcbe1d69789d7afa:.history/src/Pages/Dashboard/Appointments/Appointments_20221114122253.js
         .then(res => res.json())

@@ -13,7 +13,7 @@ const MakeAdmin = () => {
         setSuccess(false);
         const user = { email };
         e.preventDefault();
-        fetch('http://localhost:3005/users/admin', {
+        fetch('https://doctors-portal-372608.et.r.appspot.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

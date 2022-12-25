@@ -221,7 +221,7 @@ const useFirebase = () =>{
 
     const saveUserToDB = (email, displayName, method) =>{
       const user = {email, displayName};
-      fetch('http://localhost:3005/users', {
+      fetch('https://doctors-portal-372608.et.r.appspot.com/users', {
           method: method,
           headers: {
               'content-type' : 'application/json'

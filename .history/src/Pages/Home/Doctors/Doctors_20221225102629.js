@@ -6,7 +6,7 @@ import Doctor from '../Doctor/Doctor';
 const Doctors = () => {
     const [doctors, setDoctors] = useState([]);
     useEffect( ()=> {
-        fetch('http://localhost:3005/doctors')
+        fetch('https://doctors-portal-372608.et.r.appspot.com/doctors')
         .then(res => res.json())
         .then(data => setDoctors(data))
     }, [])

@@ -16,7 +16,7 @@ const Appointments = ({date}) => {
     const [appointments, setAppointments] = useState([]);
 
     useEffect( () =>{
-        const url = `http://localhost:3005/appointments?email=${user.email}&date=${date}`
+        const url = `https://doctors-portal-372608.et.r.appspot.com/appointments?email=${user.email}&date=${date}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`

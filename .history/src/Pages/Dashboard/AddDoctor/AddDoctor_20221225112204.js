@@ -20,7 +20,7 @@ const AddDoctor = () => {
         formData.append('email', email);
         formData.append('image', image);
 
-        fetch('http://localhost:3005/doctors', {
+        fetch('https://doctors-portal-372608.et.r.appspot.com/doctors', {
             method: 'POST',
             body: formData
         })

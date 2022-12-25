@@ -55,7 +55,7 @@ const BookingModal = ({ openBooking, handleBookingClose, booking, date, setBooki
         // console.log(appointment);
 
         //send data to the server and database
-        fetch('http://localhost:3005/appointments', {
+        fetch('https://doctors-portal-372608.et.r.appspot.com/appointments', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

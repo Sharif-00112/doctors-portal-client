@@ -209,7 +209,7 @@ const useFirebase = () =>{
 
     // check Admin
     useEffect( () =>{
-      fetch(`http://localhost:3005/users/${user.email}`)
+      fetch(`https://doctors-portal-372608.et.r.appspot.com/users/${user.email}`)
       .then(res => res.json())
       .then(data => setAdmin(data.admin))
     } ,[user.email])
@@ -229,7 +229,7 @@ const useFirebase = () =>{
 
     const saveUserToDB = (email, displayName, method) =>{
       const user = {email, displayName};
-      fetch('http://localhost:3005/users', {
+      fetch('https://doctors-portal-372608.et.r.appspot.com/users', {
           method: method,
           headers: {
               'content-type' : 'application/json'

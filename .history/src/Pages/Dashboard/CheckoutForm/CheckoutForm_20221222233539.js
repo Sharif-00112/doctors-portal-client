@@ -17,7 +17,7 @@ const CheckoutForm = ({ appointment }) => {
     const [processing, setProcessing] = useState(false);
 
     useEffect( () =>{
-        fetch('http://localhost:3005/create-payment-intent', {
+        fetch('https://doctors-portal-372608.et.r.appspot.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

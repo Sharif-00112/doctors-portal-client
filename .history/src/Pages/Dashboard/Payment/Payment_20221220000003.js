@@ -7,7 +7,7 @@ const Payment = () => {
     const [appointment, setAppointment] = useState({});
 
     useEffect( () =>{
-        fetch(`http://localhost:3005/appointments/${appointmentId}`)
+        fetch(`https://doctors-portal-372608.et.r.appspot.com/appointments/${appointmentId}`)
         .then(res => res.json())
         .then(data => console.log(data));
     }, [appointmentId])

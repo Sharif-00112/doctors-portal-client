@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 const Payment = () => {
     const {appointmentId} = useParams();
     // const [appointment, setAppointment] = useState([]);
-    const url = `http://localhost:3005/appointments/${appointmentId}`
+    const url = `https://doctors-portal-372608.et.r.appspot.com/appointments/${appointmentId}`
     console.log(url);
 
     // useEffect( () => {
