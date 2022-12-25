@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import Doctor from '../Doctor/Doctor';
@@ -13,9 +13,7 @@ const Doctors = () => {
 
     return (
         <div>
-            <Typography sx={{ mb: 5, mt: 5, fontWeight: 500 }} variant="h4" component="div">
-                Our Doctors
-            </Typography>
+            <h2>Our Doctors: {doctors.length}</h2>
             <Container>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                     {

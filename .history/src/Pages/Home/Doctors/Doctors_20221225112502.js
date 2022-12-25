@@ -13,7 +13,7 @@ const Doctors = () => {
 
     return (
         <div>
-            <Typography sx={{ mb: 5, mt: 5, fontWeight: 500 }} variant="h4" component="div">
+            <Typography sx={{ mb: 3, mt: 5, fontWeight: 500 }} variant="h4" component="div">
                 Our Doctors
             </Typography>
             <Container>

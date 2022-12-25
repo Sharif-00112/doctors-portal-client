@@ -66,7 +66,7 @@ const AddDoctor = () => {
                     Add Doctor
                 </Button>
             </form>
-            <br />
+
             {success && <Alert severity="success">Doctor added successfully!</Alert>}
         </div>
     );
