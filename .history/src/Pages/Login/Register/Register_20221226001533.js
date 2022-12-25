@@ -107,6 +107,9 @@ const Register = () => {
                                     type="password"
                                     variant="standard" />
                                 <br />
+                                {/* <Typography sx={{ mt:2, fontSize: 14, fontWeight: 400 }} style={{color: 'orange'}} variant="h6" component="div">
+                                    "Hints: Password should have minimum 8 characters length, 1 letter in Upper Case, 1 letter in Lower Case, 1 Special Character and 1 number"
+                                </Typography> */}
                                 <br />
                                 <Button type='submit' sx={{ width:'50%',m:3 }} variant="contained" style={{backgroundColor: '#5CE7ED'}}>
                                     Register
@@ -114,7 +117,7 @@ const Register = () => {
                                 <br />
                                 Or
                                 <br />
-                                <Button onClick={() => signInUsingGoogle(location, navigate)} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
+                                <Button onClick={signInUsingGoogle(location, navigate)} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
                                     Register with GOOGLE
                                 </Button>
                                 <br />

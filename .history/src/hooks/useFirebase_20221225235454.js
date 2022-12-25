@@ -20,7 +20,7 @@ const useFirebase = () =>{
     const facebookProvider = new FacebookAuthProvider();
     const auth = getAuth();
  
-    const signInUsingGoogle = (location, navigate) =>{
+    const signInUsingGoogle = () =>{
       setIsLoading(true);
       signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -31,8 +31,6 @@ const useFirebase = () =>{
           setUser(result.user);
           // save user to the database
           saveUserToDB(result.user.email, result.user.displayName, 'PUT');
-          const destination = location?.state?.from || '/';
-          navigate(destination);
       }).catch((error) => {
           // Handle Errors here.
           setError(error.code);
@@ -89,19 +87,20 @@ const useFirebase = () =>{
       .finally(() => setIsLoading(false));
     };
 
-    const customRegister = (email, password, navigate) =>{
+    const customRegister = (email, password, location, navigate) =>{
       setIsLoading(true);
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
         // const user = userCredential.user;
         // console.log(user);
+        const destination = location?.state?.from || '/';
+        navigate(destination);
         setUser(userCredential.user);
         // save user to the database
         saveUserToDB(userCredential.user.email, userCredential.user.displayName, 'POST')
         // clear error message
         setError('');
-        navigate('/login')
       })
       .catch((error) => {
         setError(error.code);

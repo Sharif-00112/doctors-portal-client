@@ -25,6 +25,7 @@ const Login = () => {
     let location = useLocation();
     const navigate = useNavigate();
 
+
     const handleOnChange = e =>{
         const field = e.target.name;
         const value = e.target.value;
@@ -80,7 +81,7 @@ const Login = () => {
                                 <br />
                                 Or
                                 <br />
-                                <Button onClick={()=> signInUsingGoogle(location, navigate)} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
+                                <Button onClick={signInUsingGoogle} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
                                     Login with GOOGLE
                                 </Button>
                                 <br />

@@ -80,7 +80,7 @@ const Login = () => {
                                 <br />
                                 Or
                                 <br />
-                                <Button onClick={()=> signInUsingGoogle(location, navigate)} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
+                                <Button onClick={signInUsingGoogle(location, navigate)} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
                                     Login with GOOGLE
                                 </Button>
                                 <br />

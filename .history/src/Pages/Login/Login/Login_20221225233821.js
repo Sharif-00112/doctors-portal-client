@@ -5,7 +5,7 @@ import { Button, Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import loginImg from '../../../images/images/login.png'
 import TextField from '@mui/material/TextField';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { useTitle } from '../../../hooks/useTitle';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -21,10 +21,6 @@ const Login = () => {
 
     useTitle("Login");
 
-    //redirect after login
-    let location = useLocation();
-    const navigate = useNavigate();
-
     const handleOnChange = e =>{
         const field = e.target.name;
         const value = e.target.value;
@@ -36,7 +32,7 @@ const Login = () => {
   
     const handleLoginSubmit = e => {
         e.preventDefault();
-        customLogin( loginData.email, loginData.password, location, navigate);
+        customLogin( loginData.email, loginData.password);
         // alert('Login Clicked!');
         // alert(error);s
     }
@@ -80,7 +76,7 @@ const Login = () => {
                                 <br />
                                 Or
                                 <br />
-                                <Button onClick={()=> signInUsingGoogle(location, navigate)} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
+                                <Button onClick={signInUsingGoogle} type='' sx={{ width:'75%',m:3 }} variant="contained" style={{backgroundColor: 'red'}}>
                                     Login with GOOGLE
                                 </Button>
                                 <br />

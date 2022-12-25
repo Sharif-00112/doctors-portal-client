@@ -20,7 +20,7 @@ const useFirebase = () =>{
     const facebookProvider = new FacebookAuthProvider();
     const auth = getAuth();
  
-    const signInUsingGoogle = (location, navigate) =>{
+    const signInUsingGoogle = () =>{
       setIsLoading(true);
       signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -31,8 +31,6 @@ const useFirebase = () =>{
           setUser(result.user);
           // save user to the database
           saveUserToDB(result.user.email, result.user.displayName, 'PUT');
-          const destination = location?.state?.from || '/';
-          navigate(destination);
       }).catch((error) => {
           // Handle Errors here.
           setError(error.code);
