@@ -28,15 +28,11 @@ function App() {
             <Route exact path = '/home' element={<Home/>}/>
             <Route exact path = '/login' element={<Login/>}/>
             <Route exact path = '/register' element={<Register/>}/>
-
-            {/* private route  */}
             <Route exact path = '/appointment' element = {
               <PrivateRoute>
                 <Appointment></Appointment>
               </PrivateRoute>
             }> </Route>
-
-            {/* private and nested route  */}
             <Route path = '/dashboard' element = {
               <PrivateRoute>
                 <Dashboard></Dashboard>
@@ -46,7 +42,7 @@ function App() {
               <Route path = '/dashboard/dashboard' element={<DashboardHome/>}/>
               <Route path = '/dashboard/appointment' element={<Appointment/>}/>
               <Route path = '/dashboard/dashboard/payment/:appointmentId' element={<Payment/>}/>
-              {/* secure route through AdminRoute  */}
+              {/* way-1 to secure route through AdminRoute  */}
               <Route path = '/dashboard/makeAdmin' element = {
                 <AdminRoute>
                   <MakeAdmin></MakeAdmin>
@@ -58,7 +54,6 @@ function App() {
                 </AdminRoute>
               }> </Route>
             </Route>
-
             <Route path = '*' element={<NotFound/>}/>
           </Routes>
           {/* <Footer></Footer>  */}

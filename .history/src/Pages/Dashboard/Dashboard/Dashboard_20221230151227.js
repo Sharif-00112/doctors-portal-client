@@ -6,12 +6,30 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
+// import InboxIcon from '@mui/icons-material/MoveToInbox';
+// import List from '@mui/material/List';
+// import ListItem from '@mui/material/ListItem';
+// import ListItemButton from '@mui/material/ListItemButton';
+// import ListItemIcon from '@mui/material/ListItemIcon';
+// import ListItemText from '@mui/material/ListItemText';
+// import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import DashboardHome from '../DashboardHome/DashboardHome';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AddDoctor from '../AddDoctor/AddDoctor';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+
+import { 
+  Routes,
+  Route
+} from "react-router-dom";
+import Appointment from '../../Appointment/Appointment/Appointment';
 import useAuth from '../../../hooks/useAuth';
+import Payment from '../Payment/Payment';
  
 const drawerWidth = 220;
 
@@ -53,6 +71,19 @@ function Dashboard(props) {
       </Box>}
 
       <Divider />
+      {/* <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List> */}
+      {/* <Divider /> */}
     </div>
   );
 
@@ -129,8 +160,25 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-          {/* invoke nested routes here  */}
-          <Outlet></Outlet>
+ 
+          <Routes>
+            {/* <Route path = 'appointment' element={<Appointment/>}/>
+            <Route path = '/' element={<DashboardHome/>}/>
+            <Route path = 'dashboard' element={<DashboardHome/>}/>
+            <Route path = 'dashboard/payment/:appointmentId' element={<Payment/>}/>
+            way-1 to secure route through AdminRoute 
+            <Route path = 'makeAdmin' element = {
+              <AdminRoute>
+                <MakeAdmin></MakeAdmin>
+              </AdminRoute>
+            }> </Route>
+            <Route path = 'addDoctor' element = {
+              <AdminRoute>
+                <AddDoctor></AddDoctor>
+              </AdminRoute>
+            }> </Route> */}
+          </Routes>
+          
       </Box>
     </Box>
   );

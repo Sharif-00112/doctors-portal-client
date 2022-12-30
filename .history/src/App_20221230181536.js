@@ -46,7 +46,7 @@ function App() {
               <Route path = '/dashboard/dashboard' element={<DashboardHome/>}/>
               <Route path = '/dashboard/appointment' element={<Appointment/>}/>
               <Route path = '/dashboard/dashboard/payment/:appointmentId' element={<Payment/>}/>
-              {/* secure route through AdminRoute  */}
+              {/* way-1 to secure route through AdminRoute  */}
               <Route path = '/dashboard/makeAdmin' element = {
                 <AdminRoute>
                   <MakeAdmin></MakeAdmin>
